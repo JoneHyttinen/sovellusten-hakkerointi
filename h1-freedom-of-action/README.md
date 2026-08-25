@@ -42,29 +42,11 @@ Tämän ISMS-rajauksen (Information Security Management System) piiriin kuuluu o
 
 - **Reititin**: Kuvakaappaus reitittimen hallintapaneelista (laitetiedot, kytketyt laitteet -lista).
 
-![reititinhallinta](./reititinhallinta.png)
-
-![laitetiedot](./laitetiedot.png)
-
-![kytketyt laitteet](./kytketytlaitteet.png)
-
 - **Laitteisto (Arch Linux -pöytäkone)**: Kuvakaappaus `uname -a` ja `lsb_release -a` komennoista.
-
-![järjestelmätiedot](./jarjestelmatiedot.png)
 
 - **MFA (puhelin)**: Kuvakaappaus Authenticator-sovelluksen aktiivisista tileistä ja GitHub tilin turvallisuusasetuksista, joista näkyy MFA käytössä.
 
-![authenticator sovellus](./authenticator.PNG)
-
-![GitHub asetukset](./GitHubautentikaatio.png)
-
 - **Pilvipalvelut**: Linkki GitHub-repositorioon, kuvakaappaus Google Driven ja OneDriven jaettujen kansioiden asetuksista.
-
-[GitHub-repositorio](https://github.com/JoneHyttinen/sovellusten-hakkerointi)
-
-![Google Drive](./googledrive.png)
-
-![OneDrive](./onedrive.png)
 
 - **Varmuuskopiointi**: Todetaan, ettei varmuuskopiointia ole tällä hetkellä käytössä -tämä kirjataan tunnistetuksi puutteksi/riskiksi dokumentaatioon.
 
