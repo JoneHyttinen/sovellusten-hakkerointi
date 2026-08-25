@@ -34,7 +34,7 @@ Tämän ISMS-rajauksen (Information Security Management System) piiriin kuuluu o
 
 ## Verkko- ja rajapintakaavio
 
-![kaavio](./Verkko- ja rajapintakaavio.drawio.png)
+![kaavio](./verkko-ja-rajapintakaavio.png)
 
 ---
 
