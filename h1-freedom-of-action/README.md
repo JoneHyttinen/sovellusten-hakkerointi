@@ -40,13 +40,15 @@ Tämän ISMS-rajauksen (Information Security Management System) piiriin kuuluu o
 
 ## Evidence Addendum - "What evidence could I present?"
 
-- **Reititin**: Kuvakaappaus reitittimen hallintapaneelista (laitetiedot, kytketyt laitteet -lista).
+- **Reititin**: Kuvakaappaus reitittimen hallintapaneelista (laiteohjelmiston versio, Wi-Fi-salausasetukset, kytketyt laitteet -lista).
 
-- **Laitteisto (Arch Linux -pöytäkone)**: Kuvakaappaus `uname -a` ja `lsb_release -a` komennoista.
+- **Laitteisto (Arch Linux -pöytäkone, Linux Mint -läppäri)**: Laiteluettelo käyttöjärjestelmineen ja versioineen (uname -a, lsb_release -a), sekä lista asennetuista päivityksistä/paketeista.
 
-- **MFA (puhelin)**: Kuvakaappaus Authenticator-sovelluksen aktiivisista tileistä ja GitHub tilin turvallisuusasetuksista, joista näkyy MFA käytössä.
+- **MFA (puhelin)**: Kuvakaappaus Authenticator-sovelluksen aktiivisista tileistä (tunnisteet peitettynä) ja GitHubin tilin turvallisuusasetuksista, joista näkyy MFA käytössä.
 
-- **Pilvipalvelut**: Linkki GitHub-repositorioon, kuvakaappaus Google Driven ja OneDriven jaettujen kansioiden asetuksista.
+- **Pilvipalvelut**: Linkki GitHub-repositorioon, kuvakaappaus Google Driven ja OneDriven jaettujen kansioiden asetuksista, sekä Moodle-tilin kirjautumisloki.
+
+- **Rajatut laitteet (PS5, TV)**: Lista reitittimen kytkettyjen laitteiden näkymästä, josta käy ilmi että laitteet on tunnistettu mutta rajattu ulkopuolelle.
 
 - **Varmuuskopiointi**: Todetaan, ettei varmuuskopiointia ole tällä hetkellä käytössä -tämä kirjataan tunnistetuksi puutteksi/riskiksi dokumentaatioon.
 
