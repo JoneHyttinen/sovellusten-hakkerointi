@@ -18,6 +18,8 @@ Ratkaisin tähän osioon `crackme05` ohjelman.
 
 Ensimmäisenä voimme tarkastella main funktion ohjeita 'disassemble main' komennolla.
 
+![mainfunktio](./mainfunktiocrackme05lab3.png)
+
 Me näämme main funktion ohjeista, että salasanan pituuden täytyy olla 16 merkkiä.
 
 ```
@@ -42,6 +44,8 @@ Salasanan oletettu layout on nyt:
 
 0 1 2 3 4 5 6 7 8 9 A B C D E F
 ? ? B ? ? ? ? ? ? ? ? ? ? Q ? ?
+
+---
 
 Voimme ymmärtää miten check_with_mod funktiota hyödynnetään ohjelmassa tarkastelemalla sen kutsuja main funktiossa.
 
@@ -83,7 +87,60 @@ Tämä jakaa salasanan neljään osioon:
 | 2 | password[4..7] | check_with_mod(ptr, 4, 4) |
 | 3 | password[8..11] | check_with_mod(ptr, 4, 5) |
 | 4 | password[12..15] | check_with_mod(ptr, 4, 4) |
+Jokaisen osion täytyy palauttaa `check_with_mod()` funktiosta muun kuin nollan.
+
+---
 
 Seuraavaksi voimme tarkastella itse check_with_mod funktiota 'disassemble check_with_mod' komennolla.
 
 ![check_with_mod](./check_with_modfunktiolab3.png)
+
+### Mitä `check_with_mod` tekee
+
+Käännettynä C-kieleen se on suunnilleen tällainen:
+
+```
+int check_with_mod(char *ptr, int len, int mod)
+{
+    int sum = 0;
+
+    for (int i = 0; i < len; i++)
+    {
+        sum +=  (signed char)ptr[i];
+    }
+
+    return (sum % mod) == 0;
+}
+```
+
+Eli jokaiselle 4-merkin osiolle
+
+- Lisää ASCII arvot.
+- Jaa annetulla moduluksella.
+- Jäännöksen **täytyy olla 0**.
+
+---
+
+Kaikki vaatimukset yhdessä
+
+|  Positions  |  Constraint  |
+|--------------- | --------------- |
+| 0-3 |  ASCII sum divisible by **3**.  |
+| 4-7 |  ASCII sum divisible by **4**.  |
+| 8-11 |  ASCII sum divisible by **5**.  |
+| 12-15 |  ASCII sum divisible by **4**.  |
+| 2 | Must be **B** (ASCII 66). |
+| 13 | Must be **Q** (ASCII 81). |
+| Length | Exactly **16** characters. |
+
+---
+
+**Oikean salasanan rakennus**
+Valitaan tulostettavat kirjaimet
+
+**Block 1 (positions 0-3)**
+
+Tarvitaan:
+
+$`a + b + 66 + d = 0 (mod 3)`$
+
