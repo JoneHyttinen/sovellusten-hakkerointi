@@ -89,6 +89,7 @@ Tämä jakaa salasanan neljään osioon:
 | 2 | password[4..7] | check_with_mod(ptr, 4, 4) |
 | 3 | password[8..11] | check_with_mod(ptr, 4, 5) |
 | 4 | password[12..15] | check_with_mod(ptr, 4, 4) |
+
 Jokaisen osion täytyy palauttaa `check_with_mod()` funktiosta muun kuin nollan.
 
 ---
