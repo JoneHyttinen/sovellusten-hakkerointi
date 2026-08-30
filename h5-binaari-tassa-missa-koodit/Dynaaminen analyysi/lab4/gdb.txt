@@ -1,0 +1,125 @@
+Dump of assembler code for function checkPassword(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >):
+   0x0000000000001275 <+0>:	push   %rbp
+   0x0000000000001276 <+1>:	mov    %rsp,%rbp
+   0x0000000000001279 <+4>:	push   %r12
+   0x000000000000127b <+6>:	push   %rbx
+   0x000000000000127c <+7>:	sub    $0x60,%rsp
+   0x0000000000001280 <+11>:	mov    %rdi,-0x68(%rbp)
+   0x0000000000001284 <+15>:	lea    -0x1d(%rbp),%rax
+   0x0000000000001288 <+19>:	mov    %rax,%rdi
+   0x000000000000128b <+22>:	call   0x1160 <std::allocator<char>::allocator()@plt>
+   0x0000000000001290 <+27>:	lea    -0x1d(%rbp),%rdx
+   0x0000000000001294 <+31>:	lea    -0x40(%rbp),%rax
+   0x0000000000001298 <+35>:	lea    0xd66(%rip),%rsi        # 0x2005
+   0x000000000000129f <+42>:	mov    %rax,%rdi
+   0x00000000000012a2 <+45>:	call   0x1110 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)@plt>
+   0x00000000000012a7 <+50>:	lea    -0x1d(%rbp),%rax
+   0x00000000000012ab <+54>:	mov    %rax,%rdi
+   0x00000000000012ae <+57>:	call   0x10f0 <std::allocator<char>::~allocator()@plt>
+   0x00000000000012b3 <+62>:	movl   $0xfffffff9,-0x18(%rbp)
+   0x00000000000012ba <+69>:	lea    -0x40(%rbp),%rax
+   0x00000000000012be <+73>:	mov    %rax,%rdi
+   0x00000000000012c1 <+76>:	call   0x1130 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::length() const@plt>
+   0x00000000000012c6 <+81>:	mov    %eax,-0x1c(%rbp)
+   0x00000000000012c9 <+84>:	mov    -0x68(%rbp),%rax
+   0x00000000000012cd <+88>:	mov    %rax,%rdi
+   0x00000000000012d0 <+91>:	call   0x1130 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::length() const@plt>
+   0x00000000000012d5 <+96>:	mov    %rax,%rdx
+   0x00000000000012d8 <+99>:	mov    -0x18(%rbp),%eax
+   0x00000000000012db <+102>:	neg    %eax
+   0x00000000000012dd <+104>:	cltq
+   0x00000000000012df <+106>:	cmp    %rax,%rdx
+   0x00000000000012e2 <+109>:	sete   %al
+   0x00000000000012e5 <+112>:	test   %al,%al
+   0x00000000000012e7 <+114>:	je     0x13c8 <checkPassword(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)+339>
+   0x00000000000012ed <+120>:	lea    -0x60(%rbp),%rax
+   0x00000000000012f1 <+124>:	mov    %rax,%rdi
+   0x00000000000012f4 <+127>:	call   0x1120 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string()@plt>
+   0x00000000000012f9 <+132>:	movl   $0x0,-0x14(%rbp)
+   0x0000000000001300 <+139>:	mov    -0x14(%rbp),%eax
+   0x0000000000001303 <+142>:	cmp    -0x1c(%rbp),%eax
+   0x0000000000001306 <+145>:	jge    0x1368 <checkPassword(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)+243>
+   0x0000000000001308 <+147>:	mov    -0x1c(%rbp),%eax
+   0x000000000000130b <+150>:	sub    $0x1,%eax
+   0x000000000000130e <+153>:	cmp    %eax,-0x14(%rbp)
+   0x0000000000001311 <+156>:	jne    0x1339 <checkPassword(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)+196>
+   0x0000000000001313 <+158>:	lea    -0x60(%rbp),%rax
+   0x0000000000001317 <+162>:	lea    0xceb(%rip),%rsi        # 0x2009
+   0x000000000000131e <+169>:	mov    %rax,%rdi
+   0x0000000000001321 <+172>:	call   0x10c0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator+=(char const*)@plt>
+   0x0000000000001326 <+177>:	lea    -0x60(%rbp),%rax
+   0x000000000000132a <+181>:	lea    0xcda(%rip),%rsi        # 0x200b
+   0x0000000000001331 <+188>:	mov    %rax,%rdi
+   0x0000000000001334 <+191>:	call   0x10c0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator+=(char const*)@plt>
+   0x0000000000001339 <+196>:	mov    -0x14(%rbp),%eax
+   0x000000000000133c <+199>:	movslq %eax,%rdx
+   0x000000000000133f <+202>:	lea    -0x40(%rbp),%rax
+   0x0000000000001343 <+206>:	mov    %rdx,%rsi
+   0x0000000000001346 <+209>:	mov    %rax,%rdi
+   0x0000000000001349 <+212>:	call   0x1170 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::at(unsigned long)@plt>
+   0x000000000000134e <+217>:	movzbl (%rax),%eax
+   0x0000000000001351 <+220>:	movsbl %al,%edx
+   0x0000000000001354 <+223>:	lea    -0x60(%rbp),%rax
+   0x0000000000001358 <+227>:	mov    %edx,%esi
+   0x000000000000135a <+229>:	mov    %rax,%rdi
+   0x000000000000135d <+232>:	call   0x1080 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator+=(char)@plt>
+   0x0000000000001362 <+237>:	addl   $0x1,-0x14(%rbp)
+   0x0000000000001366 <+241>:	jmp    0x1300 <checkPassword(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)+139>
+   0x0000000000001368 <+243>:	mov    -0x68(%rbp),%rax
+   0x000000000000136c <+247>:	mov    %rax,%rdi
+   0x000000000000136f <+250>:	call   0x1060 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::end()@plt>
+   0x0000000000001374 <+255>:	mov    %rax,%rbx
+   0x0000000000001377 <+258>:	mov    -0x68(%rbp),%rax
+   0x000000000000137b <+262>:	mov    %rax,%rdi
+   0x000000000000137e <+265>:	call   0x10a0 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::begin()@plt>
+   0x0000000000001383 <+270>:	mov    %rbx,%rsi
+   0x0000000000001386 <+273>:	mov    %rax,%rdi
+   0x0000000000001389 <+276>:	call   0x15bc <void std::reverse<__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >(__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >, __gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >)>
+   0x000000000000138e <+281>:	lea    -0x60(%rbp),%rdx
+   0x0000000000001392 <+285>:	mov    -0x68(%rbp),%rax
+   0x0000000000001396 <+289>:	mov    %rdx,%rsi
+   0x0000000000001399 <+292>:	mov    %rax,%rdi
+   0x000000000000139c <+295>:	call   0x15ee <__gnu_cxx::__enable_if<std::__is_char<char>::__value, bool>::__type std::operator==<char>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)>
+   0x00000000000013a1 <+300>:	test   %al,%al
+   0x00000000000013a3 <+302>:	je     0x13b2 <checkPassword(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)+317>
+   0x00000000000013a5 <+304>:	mov    $0x1,%r12d
+   0x00000000000013ab <+310>:	mov    $0x0,%ebx
+   0x00000000000013b0 <+315>:	jmp    0x13b7 <checkPassword(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)+322>
+   0x00000000000013b2 <+317>:	mov    $0x1,%ebx
+   0x00000000000013b7 <+322>:	lea    -0x60(%rbp),%rax
+   0x00000000000013bb <+326>:	mov    %rax,%rdi
+   0x00000000000013be <+329>:	call   0x1070 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()@plt>
+   0x00000000000013c3 <+334>:	cmp    $0x1,%ebx
+   0x00000000000013c6 <+337>:	jne    0x13ce <checkPassword(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)+345>
+   0x00000000000013c8 <+339>:	mov    $0x0,%r12d
+   0x00000000000013ce <+345>:	lea    -0x40(%rbp),%rax
+   0x00000000000013d2 <+349>:	mov    %rax,%rdi
+   0x00000000000013d5 <+352>:	call   0x1070 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()@plt>
+   0x00000000000013da <+357>:	mov    %r12d,%eax
+   0x00000000000013dd <+360>:	jmp    0x141f <checkPassword(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)+426>
+   0x00000000000013df <+362>:	mov    %rax,%rbx
+   0x00000000000013e2 <+365>:	lea    -0x1d(%rbp),%rax
+   0x00000000000013e6 <+369>:	mov    %rax,%rdi
+   0x00000000000013e9 <+372>:	call   0x10f0 <std::allocator<char>::~allocator()@plt>
+   0x00000000000013ee <+377>:	mov    %rbx,%rax
+   0x00000000000013f1 <+380>:	mov    %rax,%rdi
+   0x00000000000013f4 <+383>:	call   0x1150 <_Unwind_Resume@plt>
+   0x00000000000013f9 <+388>:	mov    %rax,%rbx
+   0x00000000000013fc <+391>:	lea    -0x60(%rbp),%rax
+   0x0000000000001400 <+395>:	mov    %rax,%rdi
+   0x0000000000001403 <+398>:	call   0x1070 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()@plt>
+   0x0000000000001408 <+403>:	lea    -0x40(%rbp),%rax
+   0x000000000000140c <+407>:	mov    %rax,%rdi
+   0x000000000000140f <+410>:	call   0x1070 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()@plt>
+   0x0000000000001414 <+415>:	mov    %rbx,%rax
+   0x0000000000001417 <+418>:	mov    %rax,%rdi
+   0x000000000000141a <+421>:	call   0x1150 <_Unwind_Resume@plt>
+   0x000000000000141f <+426>:	add    $0x60,%rsp
+   0x0000000000001423 <+430>:	pop    %rbx
+   0x0000000000001424 <+431>:	pop    %r12
+   0x0000000000001426 <+433>:	pop    %rbp
+   0x0000000000001427 <+434>:	ret
+End of assembler dump.
+Warning: 'set logging off', an alias for the command 'set logging enabled', is deprecated.
+Use 'set logging enabled off'.
+

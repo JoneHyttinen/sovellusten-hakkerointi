@@ -1,4 +1,4 @@
-## lab0
+## **lab0**
 
 Alkuperäinen koodi on virheellinen, koska funktiota kutsuessa koko on 5, kun oikeasti taulukon viimeisen arvon indeksi on 4, koska taulukko alkaa 0:sta.
 
@@ -8,11 +8,162 @@ Korjasin koodin vaihtamalla buggy_functionissa olevan loopin lopetusehdon <=:st�
 
 ![korjattu funktio](./korjattukoodi.png)
 
-## lab1
+---
 
-## lab2
+## **lab1**
 
-## lab3
+Alkuperäisessä koodissa oli melko paljon ongelmia, jotka huomasin ja pystyin korjaamaan pelkästään lähdekoodia tutkimalla.
+
+![alkuperäinen koodi lab1](./alkuperäinenkoodilab1.png)
+
+Korjasin nämä kohdat ja muutin myös good_message constantiksi, jotta compiler ei valittanut siitä.
+
+![korjattukoodi lab1](./korjattukoodilab1.png)
+
+---
+
+## **lab2**
+
+Tässä tehtävässä ensimmäisen salasanan ja FLAGin voisi periaatteessa katsoa vain lähdekoodista, mutta ne saa selville myös debuggerin avulla.
+
+katsoin mihin muistisijainteihin main funktiossa muuttujia talletettiin ja katsoin mitä niistä löytyi saadakseen selville salasanan ja FLAGin.
+
+![mainfunktio lab2](./mainfunktiolab2.png)
+
+---
+
+![salasana ja FLAG](./kaikkitarvittavalab2.png)
+
+Ensimmäisen ohjelman salasana on siis '**sala-hakkeri-321**' ja ensimmäinen FLAG on '**Tero-d75ee66af0a68663f15539ec0f46e3b1**'.
+
+---
+
+Seuraava FLAG sijaitsi passtr2o ohjelmassa, jonka lähdekoodia ei ollut hallussa, salasana ja FLAG piti siis saada selville pelkän debuggerin avulla.
+
+---
+
+### **Ohjelman funktioiden selvittäminen**
+
+Ensimmäinen asia minkä katsoin oli mitä funktioita ohjelmassa oli `info functions` komennolla.
+
+![ohjelman funktiot](./ohjelmanfunktiotlab2.png)
+
+---
+
+### **Main-funktion tutkiminen**
+
+Seuraavaksi katsoin mitä main funktio pitää sisällään `disassemble main` komennolla.
+
+![main funktio passtr2o](./mainfunktiopasstr2olab2.png)
+
+Tästä voidaan päätellä, että `scanf` lukee käyttäjän syötteen ja tämän jälkeen syöte välitetään `mAsdf3a`-funktiolle.
+
+---
+
+### **Salasanan tarkistusfunktion analysointi**
+
+Seuraavaksi tarkistin funktion:
+`disassemble mAsdf3a`
+
+![mAsdf3a funktio](./tärkeimmätmAsdf3afunktiolab2.png)
+
+Kuvassa näkyy funktion meille tärkein osa.
+
+Funktiolle annetaan kaksi merkkijonoa:
+
+- `RDI` sisältää ensimmäisen merkkijonon.
+- `RSI` sisältää toisen merkkijonon.
+
+Tämän voi todentaa GDB:ssä asettamalla breakpointin funktioon:
+`break mAsdf3a`
+`run`
+
+Kun ohjelma pysähtyy, argumentit voi tarkistaa:
+
+`x/s $rdi`
+`x/s $rsi`
+
+![breakpoint mAsdf3a](./breakmAsdf3alab2.png)
+
+---
+
+### **Binäärissä olevan vertailumerkkijonon selvittäminen**
+
+`main`-funktion alussa oleva assembly sisälsi seuraavan:
+
+```
+movabs %rax, 0x3875346a544c6e61
+mov %rax, 0x1(%rsp)
+movb $0x0, 0x9(%rsp)
+```
+```
+```
+
+Koska x86_64 käyttää little-endian muotoa, muistissa tavut ovat päinvastaisessa järjestyksessä kuin rekisterissä näkyvä heksaluku.
+
+Arvo:
+`0x3875346a544c6e61`
+
+tallentuu muistiin seuraavina tavuina:
+`61 6e 4c 54 6a 34 75 38`
+
+ASCII-muodossa tämä on:
+`anLTj4u8`
+
+Tämä ei kuitenkaan ollut suoraan oikea salasana.
+
+---
+
+### **Salasanan muunnoksen selvittäminen**
+
+`mAsdf3a` käsittelee merkit indeksin perusteella.
+
+Assemblyssä:
+```
+test $0x1, %al
+je  ...
+sub $0x7, %edx
+```
+
+Jos indeksin alin bitti on 1, eli indeksi on pariton, merkkikoodista vähennetään `7`.
+
+Parillisella indeksillä suoritetaan:
+`add $0x3, %edx`
+
+Eli algoritmi on:
+
+```
+parillinen indeksi -> merkki + 3
+pariton indeksi -> merkki - 7
+```
+
+Binäärissä merkkijono oli:
+`anLTj4u8`
+
+Muunnettaessa jokainen merkki saadaan:
+
+| Indeksi | Alkuperäinen | Operaatio | Tuloksena |
+| --------------- | --------------- | --------------- | --------------- |
+| 0 | a | +3 | d |
+| 1 | n | -7 | g |
+| 2 | L | +3 | O |
+| 3 | T | -7 | M |
+| 4 | j | +3 | m |
+| 5 | 4 | -7 | - |
+| 6 | u | +3 | x |
+| 7 | 8 | -7 | 1 |
+
+Näin saadaan oikeaksi salasanaksi:
+`dgOMm-x1`
+
+Tämä voidaan varmistaa suorittamalla ohjelma ja syöttämällä salasana:
+`dgOMm-x1`
+
+![salasana selvitetty](./solvedpasstr2olab2.png)
+
+---
+
+## **lab3**
 
 Ratkaisin tähän osioon `crackme05` ohjelman.
 
@@ -199,3 +350,11 @@ Testataan onko mahdollinen salasana vastaus ohjelmaan.
 ![salasanatestaus](./salasanaratkaistulab3.png)
 
 Salasana on oikein ja tämä tehtävä on nyt ratkaistu!
+
+---
+
+## **lab4**
+
+---
+
+## **Lähteet**
