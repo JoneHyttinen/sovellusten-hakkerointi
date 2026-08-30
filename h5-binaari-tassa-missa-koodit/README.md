@@ -82,7 +82,7 @@ call check_with_mod
 Tämä jakaa salasanan neljään osioon:
 
 | Block | Characters | Arguments |
-| --------------- | --------------- | --------------- |
+| ----- | --------------- | --------------- |
 | 1 | password[0..3] | check_with_mod(ptr, 4, 3) |
 | 2 | password[4..7] | check_with_mod(ptr, 4, 4) |
 | 3 | password[8..11] | check_with_mod(ptr, 4, 5) |
