@@ -358,3 +358,9 @@ Salasana on oikein ja tämä tehtävä on nyt ratkaistu!
 ---
 
 ## **Lähteet**
+
+ChatGPT hyödynnetty taulukoiden tekemisessä tarvittaessa.
+
+ChatGPT hyödynnetty kääntämään assembly ohjeet C ja C++ koodiksi ohjeiden ymmärtämiseksi.
+
+[Larin tehtävänanto](https://terokarvinen.com/application-hacking/#laksyt)
