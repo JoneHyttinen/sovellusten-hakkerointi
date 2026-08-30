@@ -136,6 +136,7 @@ Kaikki vaatimukset yhdessä
 ---
 
 **Oikean salasanan rakennus**
+
 Valitaan tulostettavat kirjaimet
 
 **Block 1 (positions 0-3)**
@@ -144,3 +145,53 @@ Tarvitaan:
 
 $`a + b + 66 + d = 0 (mod 3)`$
 
+Valitaan a a B a:
+
+- 97 + 97 + 66 + 97 = **357**
+- 357 / 3 = 119 jäännös **0** 
+
+**Block 2 (positions 4-7)**
+
+Valitaan aaaa:
+
+- 97 x 4 = **388**
+- 388 voi jakaa **4**:llä
+
+**Block 3 (positions 8-11)**
+
+Valitaan dddd:
+
+- 100 x 4 = **400**
+- 400 voi jakaa **5**:llä
+
+**Block 4 (positions 12-15)**
+
+Tarvitaan merkki 13 = Q.
+
+Valitaan aQaa:
+
+- 97 + 81 + 97 + 97 = **372**
+- 372 voi jakaa **4**:llä
+
+---
+
+**Mahdollinen salasana**
+
+**aaBaaaaaddddaQaa**
+
+Tämä täyttää **kaikki tarkastukset** main-funktiossa.
+
+**Varmistetaan summien eheys**
+
+| Block | Sum | Result |
+| --------------- | --------------- | --------------- |
+| aaBa | 357 | $`357 mod 3 = 0`$ |
+| aaaa | 388 | $`388 mod 4 = 0`$ |
+| dddd | 400 | $`400 mod 5 = 0`$ |
+| aQaa | 372 | $`372 mod 4 = 0`$ |
+
+Testataan onko mahdollinen salasana vastaus ohjelmaan.
+
+![salasanatestaus](./salasanaratkaistulab3.png)
+
+Salasana on oikein ja tämä tehtävä on nyt ratkaistu!
