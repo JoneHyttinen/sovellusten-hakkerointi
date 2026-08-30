@@ -38,9 +38,9 @@ Ensimmäisen ohjelman salasana on siis '**sala-hakkeri-321**' ja ensimmäinen FL
 
 ---
 
-Seuraava FLAG sijaitsi passtr2o ohjelmassa, jonka lähdekoodia ei ollut hallussa, salasana ja FLAG piti siis saada selville pelkän debuggerin avulla.
+### **passtr2o ohjelman crackkaaminen**
 
----
+Seuraava FLAG sijaitsi passtr2o ohjelmassa, jonka lähdekoodia ei ollut hallussa, salasana ja FLAG piti siis saada selville pelkän debuggerin avulla.
 
 ### **Ohjelman funktioiden selvittäminen**
 
