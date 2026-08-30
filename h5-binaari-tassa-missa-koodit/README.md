@@ -14,6 +14,8 @@ Korjasin koodin vaihtamalla buggy_functionissa olevan loopin lopetusehdon <=:st�
 
 ## lab3
 
+Ratkaisin tähän osioon `crackme05` ohjelman.
+
 Ensimmäisenä voimme tarkastella main funktion ohjeita 'disassemble main' komennolla.
 
 Me näämme main funktion ohjeista, että salasanan pituuden täytyy olla 16 merkkiä.
@@ -71,8 +73,6 @@ lea 0xc(%rbx),%rdi
 mov $4,%esi
 mov $4,%edx
 call check_with_mod
-```
-```
 ```
 
 Tämä jakaa salasanan neljään osioon:
