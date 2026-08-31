@@ -44,6 +44,8 @@ Ensimmäisen ohjelman salasana on siis '**sala-hakkeri-321**' ja ensimmäinen FL
 
 Seuraava FLAG sijaitsi passtr2o ohjelmassa, jonka lähdekoodia ei ollut hallussa, salasana ja FLAG piti siis saada selville pelkän debuggerin avulla.
 
+Debuggaamisen aloittamiseksi käytin komentoa `gdb passtr2o`.
+
 ### **Ohjelman funktioiden selvittäminen**
 
 Ensimmäinen asia minkä katsoin oli mitä funktioita ohjelmassa oli `info functions` komennolla.
@@ -169,7 +171,9 @@ Tämä voidaan varmistaa suorittamalla ohjelma ja syöttämällä salasana:
 
 Ratkaisin tähän osioon `crackme05` ohjelman.
 
-Ensimmäisenä voimme tarkastella main funktion ohjeita 'disassemble main' komennolla.
+Kuten aina, debuggaamisen aloittamiseksi käytin `gdb` komentoa `crackme05.64` ohjelman kanssa.
+
+Ensimmäisenä gdb:ssä voimme tarkastella main funktion ohjeita `disassemble main` komennolla.
 
 ![mainfunktio](./mainfunktiocrackme05lab3.png)
 
