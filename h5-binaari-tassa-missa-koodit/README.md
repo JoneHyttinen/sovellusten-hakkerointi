@@ -1,3 +1,5 @@
+# h5 tehtävän dokumentaatio
+
 ## **lab0**
 
 Alkuperäinen koodi on virheellinen, koska funktiota kutsuessa koko on 5, kun oikeasti taulukon viimeisen arvon indeksi on 4, koska taulukko alkaa 0:sta.
