@@ -495,4 +495,7 @@ ChatGPT hyödynnetty taulukoiden tekemisessä tarvittaessa.
 
 ChatGPT hyödynnetty kääntämään assembly ohjeet C ja C++ koodiksi ohjeiden ymmärtämiseksi.
 
-[Larin tehtävänanto](https://terokarvinen.com/application-hacking/#laksyt)
+Tehtävänannossa mukana tullutta GDB Cheat Sheettiä hyödynnetty.
+
+[Larin tehtävänanto ja tehtävätiedostot](https://terokarvinen.com/application-hacking/#laksyt)
+[MarkDown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
