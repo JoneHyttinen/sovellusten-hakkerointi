@@ -1,4 +1,6 @@
 title: My Documentation
 description: Documentation for assignments in a Application hacking and vulnerabilities course
 
-theme: minima
+remote_theme: pages-themes/tactile@v0.2.0
+plugins:
+  - jekyll-remote-theme
