@@ -205,7 +205,7 @@ Salasanan oletettu layout on nyt:
 
 ---
 
-Voimme ymmärtää miten check_with_mod funktiota hyödynnetään ohjelmassa tarkastelemalla sen kutsuja main funktiossa.
+Voimme ymmärtää miten `check_with_mod` funktiota hyödynnetään ohjelmassa tarkastelemalla sen kutsuja main funktiossa.
 
 ![main](./mainfunktiossacheck_with_modlab3.png)
 
