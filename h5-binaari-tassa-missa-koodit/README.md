@@ -95,12 +95,10 @@ Kun ohjelma pysähtyy, argumentit voi tarkistaa:
 
 `main`-funktion alussa oleva assembly sisälsi seuraavan:
 
-```
+```asm
 movabs %rax, 0x3875346a544c6e61
 mov %rax, 0x1(%rsp)
 movb $0x0, 0x9(%rsp)
-```
-```
 ```
 
 Koska x86_64 käyttää little-endian muotoa, muistissa tavut ovat päinvastaisessa järjestyksessä kuin rekisterissä näkyvä heksaluku.
@@ -123,7 +121,7 @@ Tämä ei kuitenkaan ollut suoraan oikea salasana.
 `mAsdf3a` käsittelee merkit indeksin perusteella.
 
 Assemblyssä:
-```
+```asm
 test $0x1, %al
 je  ...
 sub $0x7, %edx
@@ -179,7 +177,7 @@ Ensimmäisenä gdb:ssä voimme tarkastella main funktion ohjeita `disassemble ma
 
 Me näämme main funktion ohjeista, että salasanan pituuden täytyy olla 16 merkkiä.
 
-```
+```asm
 call strnlen
 cmp $0x10, %eax // vertaa string pituutta kuuteentoista
 jne fail
@@ -187,13 +185,13 @@ jne fail
 
 Toinen salasanan vaatimus on, että 2 indeksin arvon täytyy olla 'B' kirjain.
 
-```
+```asm
 cmpb $0x42, 0x2(%rbx) ; 0x42 = 'B' ASCII:ssa.
 ```
 
 Kolmas vaatimus salasanalle on, että  13 indeksin arvon täytyy olla 'Q' kirjain.
 
-```
+```asm
 cmpb $0x51, 0xd(%rbx) ; 0x51 = 'Q' ASCII:ssa.
 ```
 
@@ -211,28 +209,28 @@ Voimme ymmärtää miten check_with_mod funktiota hyödynnetään ohjelmassa tar
 
 ![main](./mainfunktiossacheck_with_modlab3.png)
 
-```
+```asm
 mov %rbx,%rdi      ; pointer into password
 mov $0x4,%esi      ; length
 mov $0x3,%edx      ; modulus?
 call check_with_mod
 ```
 
-```
+```asm
 lea 0x4(%rbx),%rdi
 mov $4,%esi
 mov $4,%edx
 call check_with_mod
 ```
 
-```
+```asm
 lea 0x8(%rbx),%rdi
 mov $4,%esi
 mov $5,%edx
 call check_with_mod
 ```
 
-```
+```asm
 lea 0xc(%rbx),%rdi
 mov $4,%esi
 mov $4,%edx
@@ -260,7 +258,7 @@ Seuraavaksi voimme tarkastella itse check_with_mod funktiota 'disassemble check_
 
 Käännettynä C-kieleen se on suunnilleen tällainen:
 
-```
+```c
 int check_with_mod(char *ptr, int len, int mod)
 {
     int sum = 0;
@@ -304,7 +302,7 @@ Valitaan tulostettavat kirjaimet
 
 Tarvitaan:
 
-$`a + b + 66 + d = 0 (mod 3)`$
+$a + b + 66 + d = 0 (mod 3)$
 
 Valitaan a a B a:
 
@@ -346,10 +344,10 @@ Tämä täyttää **kaikki tarkastukset** main-funktiossa.
 
 | Block | Sum | Result |
 | --------------- | --------------- | --------------- |
-| aaBa | 357 | $`357 mod 3 = 0`$ |
-| aaaa | 388 | $`388 mod 4 = 0`$ |
-| dddd | 400 | $`400 mod 5 = 0`$ |
-| aQaa | 372 | $`372 mod 4 = 0`$ |
+| aaBa | 357 | $357 mod 3 = 0$ |
+| aaaa | 388 | $388 mod 4 = 0$ |
+| dddd | 400 | $400 mod 5 = 0$ |
+| aQaa | 372 | $372 mod 4 = 0$ |
 
 Testataan onko mahdollinen salasana vastaus ohjelmaan.
 
