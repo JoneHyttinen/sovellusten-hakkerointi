@@ -63,3 +63,8 @@ Tämän ISMS-rajauksen (Information Security Management System) piiriin kuuluu o
 | Pilvipalveluntarjoajat (GitHub, Google, Microsoft) | Tilien turvallisuus (MFA käytössä), palveluehtojen noudattaminen | Tuki (Support) | Kuvakaappaus MFA-asetuksista, käyttöoikeuksien ja jaettujen kansioiden tarkistus |
 | Oppilaitos / kurssin järjestäjä | Akateeminen rehellisyys, varmuus ettei verkosta tehdä haitallista toimintaa | Suorituskyvyn arviointi (Performance Evaluation) | Palautetut tehtävät ja repositoriot ovat jäljitettävissä omaan tiliin, ei epäilyttävää verkkoliikennettä laitteista |
 
+---
+
+### Lähteet
+
+- https://terokarvinen.com/application-hacking/#laksyt (tehtavänanto)
