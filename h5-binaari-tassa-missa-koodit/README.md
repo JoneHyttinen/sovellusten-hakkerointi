@@ -355,6 +355,136 @@ Salasana on oikein ja tämä tehtävä on nyt ratkaistu!
 
 ## **lab4**
 
+### **Tavoite**
+
+Tehtävän tavoitteena oli selvittää C++-ohjelman oikea salasana tutkimalla käännettyä ohjelmaa GDB-debuggerilla ja analysoimalla sen assembly-koodia.
+
+### **`main`-funktion analysointi**
+
+Ohjelman `main`-funktio lukee käyttäjän syöttämän tekstin `std::getline()`-funktiolla ja välittää sen `checkPassword()`-funktiolle:
+
+```asm
+0x1492 <+106>: call checkPassword
+0x1497 <+111>: test %al,%al
+0x1499 <+113>: je 0x14a4
+```
+
+`checkPassword()` palauttaa totuusarvon, jota testataan `test`-käskyllä. Jos palautusarvo on nolla, salasana hylätään. Tästä voitiin päätellä, että varsinainen salasanan tarkistus tapahtuu `checkPassword()`-funktiossa.
+
+### **`checkPassword`-funktion analysointi**
+
+Funktion alussa muodostetaan merkkijono muistiossa sijaitsevasta datasta:
+
+```asm
+lea 0xd66(%rip),%rsi        # 0x2005
+```
+
+Muistin sisältö tarkistettiin GDB:llä komennolla:
+
+```text
+x/s 0x2005
+```
+
+Tuloksena saatiin:
+
+```text
+"dec"
+```
+
+Seuraavaksi ohjelma määrittää vaadituksi salasanan pituudeksi seitsemän merkkiä. Assembly-koodissa tämä tehdään asettamalla arvoksi `-7` ja negatoimalla se:
+
+```asm
+movl $0xfffffff9,-0x18(%rbp)
+...
+neg %eax
+```
+
+Tämän jälkeen käyttäjän syötteen pituutta verrataan arvoon 7. Salasanan täytyy siis olla **täsmälleen seitsemän merkkiä pitkä**.
+
+### **Odotetun merkkijonon muodostaminen**
+
+Ohjelma käy merkkijonon `"dec"` merkit yksitellen läpi ja rakentaa uuden merkkijonon.
+
+Silmukan viimeisen merkin kohdalla ohjelma lisää kaksi muuta merkkijonoa. Näiden osoitteet ovat `0x2009` ja `0x200b`.
+
+Niiden sisällöt tarkistettiin GDB:llä:
+
+```text
+x/s 0x2009
+x/s 0x200b
+```
+
+Tulokset olivat:
+
+```text
+0x2009: "k"
+0x200b: "car"
+```
+
+Näiden perusteella ohjelma muodostaa merkkijonon seuraavasti:
+
+```text
+d
+de
+dek + car + c
+```
+
+Lopputuloksena saadaan:
+
+```text
+dekcarc
+```
+
+### **Syötteen kääntäminen**
+
+Seuraavaksi ohjelma kutsuu `std::reverse()`-funktiota:
+
+```asm
+call std::reverse<...>
+```
+
+Tämä kääntää käyttäjän syöttämän salasanan merkkijonon toisinpäin.
+
+Tämän jälkeen käännettyä syötettä verrataan juuri muodostettuun merkkijonoon:
+
+```asm
+call std::operator==(...)
+```
+
+Koska ohjelma odottaa merkkijonoa:
+
+```text
+dekcarc
+```
+
+käyttäjän täytyy syöttää tämän merkkijonon käänteinen versio:
+
+```text
+cracked
+```
+
+### **Lopputulos**
+
+Oikeaksi salasanaksi selvitettiin:
+
+```text
+cracked
+```
+
+Kun käyttäjä syöttää `cracked`, ohjelma kääntää sen:
+
+```text
+cracked → dekcarc
+```
+
+Tämä vastaa ohjelman muodostamaa merkkijonoa, joten `checkPassword()` palauttaa arvon `true` ja salasana hyväksytään.
+
+### **Yhteenveto**
+
+Salasana selvitettiin analysoimalla ohjelman assembly-koodia GDB:llä. Tarkastelussa löydettiin salasanan pituusrajoitus, muistissa olevat merkkijonot sekä `std::reverse()`-operaatio. Näiden tietojen avulla voitiin rekonstruoida ohjelman odottama merkkijono ja kääntää se alkuperäiseksi käyttäjän syötteeksi.
+
+**Oikea salasana: `cracked`**
+
 ---
 
 ## **Lähteet**
