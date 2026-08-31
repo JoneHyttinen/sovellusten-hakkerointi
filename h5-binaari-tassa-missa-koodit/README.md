@@ -250,7 +250,7 @@ Jokaisen osion täytyy palauttaa `check_with_mod()` funktiosta muun kuin nollan.
 
 ---
 
-Seuraavaksi voimme tarkastella itse check_with_mod funktiota 'disassemble check_with_mod' komennolla.
+Seuraavaksi voimme tarkastella itse `check_with_mod` funktiota `disassemble check_with_mod` komennolla.
 
 ![check_with_mod](./check_with_modfunktiolab3.png)
 
@@ -301,9 +301,9 @@ Valitaan tulostettavat kirjaimet
 **Block 1 (positions 0-3)**
 
 Tarvitaan:
-
-$a + b + 66 + d = 0 (mod 3)$
-
+```math
+a + b + 66 + d = 0 (mod 3)
+```
 Valitaan a a B a:
 
 - 97 + 97 + 66 + 97 = **357**
@@ -344,10 +344,10 @@ Tämä täyttää **kaikki tarkastukset** main-funktiossa.
 
 | Block | Sum | Result |
 | --------------- | --------------- | --------------- |
-| aaBa | 357 | $357 mod 3 = 0$ |
-| aaaa | 388 | $388 mod 4 = 0$ |
-| dddd | 400 | $400 mod 5 = 0$ |
-| aQaa | 372 | $372 mod 4 = 0$ |
+| aaBa | 357 | `357 mod 3 = 0` |
+| aaaa | 388 | `388 mod 4 = 0` |
+| dddd | 400 | `400 mod 5 = 0` |
+| aQaa | 372 | `372 mod 4 = 0` |
 
 Testataan onko mahdollinen salasana vastaus ohjelmaan.
 
