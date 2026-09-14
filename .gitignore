@@ -1,0 +1,5 @@
+# Cloned external tool (robbins/tp-link-decrypt) used locally for firmware
+# extraction. Not our code, and git registers it as a broken submodule
+# gitlink if it's ever `git add`-ed since it carries its own .git/, which
+# breaks the GitHub Pages build ("No url found for submodule path ...").
+h6-onkohan-tama-turvallinen-kayttaa/tp-link-decrypt/
