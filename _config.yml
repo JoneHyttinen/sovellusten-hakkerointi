@@ -6,3 +6,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-github-metadata
 github: [metadata]
+
+exclude:
+  - h6-onkohan-tama-turvallinen-kayttaa/dump-rootfs
+  - h6-onkohan-tama-turvallinen-kayttaa/extractions
