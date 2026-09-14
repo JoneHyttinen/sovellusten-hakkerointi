@@ -1,0 +1,17 @@
+#!/bin/sh
+
+insmod /lib/modules/3.10.14/avpu.ko clk_name=vpll avpu_clk=400000000
+insmod /lib/modules/3.10.14/tx-isp-t31.ko isp_clk=150000000 isp_ch0_pre_dequeue_time=14 isp_ch0_pre_dequeue_interrupt_process=0 isp_ch0_pre_dequeue_valid_lines=540 isp_memopt=1
+
+if [ -e /tmp/base-files/config/detect_i2c_install_sensor.sh ];
+then
+	/tmp/base-files/config/detect_i2c_install_sensor.sh
+else
+ 	/config/auto_detect_sensor/detect_i2c_install_sensor.sh
+fi
+
+insmod /lib/modules/3.10.14/audio.ko alc_mode=0 spk_gpio=-1
+
+echo /sbin/mdev > /proc/sys/kernel/hotplug
+/sbin/mdev -s && echo "mdev is ok......"
+

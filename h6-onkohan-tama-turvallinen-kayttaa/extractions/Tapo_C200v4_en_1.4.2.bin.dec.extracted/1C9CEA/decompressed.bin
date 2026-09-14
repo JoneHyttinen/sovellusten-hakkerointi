@@ -1,0 +1,1473 @@
+{
+	"motor_drv":{
+		"x_max_speed":440,
+		"x_direction":1,
+		"x_forward_direction":-1,
+		"x_model":"24BYJ48_64",
+		"x_start_angle":0,
+		"x_end_angle":345,
+		"x_phy_start_angle":0,
+		"x_phy_end_angle":345,
+		"x_construct_master_teeth":17,
+		"x_construct_slave_teeth":34,
+		"y_max_speed":440,
+		"y_direction":1,
+		"y_forward_direction":-1,
+		"y_model":"24BYJ48_64",
+		"y_start_angle":-10,
+		"y_end_angle":110,
+		"y_phy_start_angle":-10,
+		"y_phy_end_angle":110,
+		"y_construct_master_teeth":1,
+		"y_construct_slave_teeth":1,
+		"x_interface":0,
+		"x_interface":0,
+		"x_gpio_a":44,
+		"x_gpio_b":45,
+		"x_gpio_c":46,
+		"x_gpio_d":47,
+		"x_gpio_opp":0,
+		"y_gpio_a":61,
+		"y_gpio_b":78,
+		"y_gpio_c":79,
+		"y_gpio_d":80,
+		"y_gpio_opp":0,
+		"x_pwm_set":0,
+		"y_pwm_set":0,
+		"x_switch":0,
+		"y_switch":0,
+		"switch_gpio":0,
+		"x_factory_angle":172,
+		"y_factory_angle":0,
+		"frame_scan_ms":3000,
+		"frame_stay_ms":3000,
+		"pt_speed":1,
+		"motor_move_sync":0,
+		"night_min_focal_length":0.000,
+		"lens_mask_pan_angle":1.000,
+		"lens_mask_tilt_angle":0.000,
+		"lens_mask_zoom_angle":1.000,
+		"sensor_horizontal":5790,
+		"sensor_vertical":3270
+	},
+	"capability": {
+		"position_pan_range": ["-1.000000","1.000000"],
+		"position_tilt_range": ["-1.000000","1.000000"],
+		"beyond_move_range":["-4.000000", "4.000000"],
+		"speed_pan_max": "1.000000",
+		"speed_tilt_max": "1.000000",
+		"speed_zoom_max": "1.000000",
+		"speed_default":"0.600000",
+		"home_position_mode": "configurable",
+		"absolute_move_supported": "1",
+		"relative_move_supported": "1",
+		"continuous_move_supported": "1",
+		"calibrate_supported": "1",
+		"preset_supported": "1",
+		"preset_number_max": "8",
+		"tour_supported": "1",
+		"tour_number_max": "8",
+		"tour_spots_number_max": "8",
+		"tour_stay_time_range": [15000,3600000],
+		"tour_recurring_times_range": [1,100],
+		"tour_recurring_duration_range": [1000,10000],
+		"eflip_mode": ["off","on"],
+		"reverse_mode": ["off","on","auto"],
+		"scan_supported": "0",
+		"scan_support_type_list": ["auto_scan","frame_scan","random_scan","tilt_scan","panorama_scan"],
+		"park_supported": "1",
+		"park_time_range":[5,720],
+		"park_support_mode_list":["auto_scan","frame_scan","random_scan","tilt_scan","panorama_scan","preset","tour","pattern"],
+		"plan_supported": "0",
+		"plan_resume_time_range": [5,720],
+		"plan_number_of_oneday_max": "10",
+		"plan_support_type_list": ["auto_scan","frame_scan","random_scan","tour","preset","pattern","panorama_scan","tilt_scan","reboot","adjust","disable"],
+		"poweroff_save_supported": "1",
+		"poweroff_save_time_range": [30,600],
+		"pattern_supported": "0",
+		"pattern_number_max": "4",
+		"pattern_spots_number_max": "400",
+		"limit_supported": "0",
+		"manual_control_mode": ["compatible","pedestrian","motor_vehicle","non_motor_vehicle","self_adaptive"],
+		"manual_control_level": ["low","normal","high"]
+	},
+	"basic_config": {
+		"speed_pan_default": 1.000000,
+		"speed_tilt_default": 0.890000,
+		"speed_zoom_default": 0.670000,
+		"timeout_default": "180000",
+		"proportional_pan_enabled": "1",
+		"elevation_min": "0",
+		"elevation_max": "90",
+		"reverse_mode": "off",
+		"eflip_mode": "off",
+		"sensor_flip_type": "off"
+	},
+	"scan_config": {
+			"speed": 0.7000,
+	},
+	"park_config": {
+		"enabled": "0",
+		"park_time": "5",
+		"action_id": "1",
+		"action_mode": "auto_scan",
+	},
+	"limit_config": {
+		"enabled": "1",
+		"key_position_pan_enabled": "0",
+		"key_position_pan_left": "-1",
+		"key_position_pan_right": "1",
+		"key_position_tilt_enabled": "0",
+		"key_position_tilt_down": "-1",
+		"key_position_tilt_up": "1",
+		"key_position_zoom_enabled": "0",
+		"key_position_zoom_min": "0",
+		"key_position_zoom_max": "1",
+		"scan_position_pan_enabled": "0",
+		"scan_position_pan_left": "-1",
+		"scan_position_pan_right": "1",
+		"scan_position_tilt_enabled": "0",
+		"scan_position_tilt_down": "-1",
+		"scan_position_tilt_up": "1",
+		"scan_position_zoom_enabled": "0",
+		"scan_position_zoom_min": "-1",
+		"scan_position_zoom_max": "1"
+	},
+	"poweroff_save_config": {
+		"enabled": "1",
+		"save_time": "30",
+	},
+	"poweroff_save": {
+		"position_pan":"-999",
+		"position_tilt":"-999",
+		"position_zoom":"-999"
+	},
+	"manual_control_config": {
+		"speed_mode": "self_adaptive",
+		"speed_level": "normal",
+	},
+	"home": {
+		"is_default": "on",
+		"position_pan": -1.000,
+		"position_tilt": 1.000,
+		"position_zoom": 0.000,
+	},
+	"plan_config": {
+		"enabled": 0,
+		"resume_time": 5,
+	},
+}
+{
+	"chn1_channel":{
+		"enabled":"off"
+	}
+}
+[{
+	"week_plan_1":{
+		"type":"2",
+		"start_minute":"0",
+		"end_minute":"1440"
+	}
+},
+{
+	"week_plan_25":{
+		"type":"2",
+		"start_minute":"0",
+		"end_minute":"1440"
+	}
+},
+{
+	"week_plan_49":{
+		"type":"2",
+		"start_minute":"0",
+		"end_minute":"1440"
+	}
+},
+{
+	"week_plan_73":{
+		"type":"2",
+		"start_minute":"0",
+		"end_minute":"1440"
+	}
+},
+{
+	"week_plan_97":{
+		"type":"2",
+		"start_minute":"0",
+		"end_minute":"1440"
+	}
+},
+{
+	"week_plan_121":{
+		"type":"2",
+		"start_minute":"0",
+		"end_minute":"1440"
+	}
+},
+{
+	"week_plan_145":{
+		"type":"2",
+		"start_minute":"0",
+		"end_minute":"1440"
+	}
+}]
+{
+	"server": {
+		"relay_host": "aps1-relay-dcipc-beta.i.tplinknbu.com",
+		"relay_port": "443",
+		"use_https": 1
+	}
+}
+{
+	"client_limit":{
+		"max_p2p_relay_num":4,
+		"max_main_num":4,
+		"max_sub_num":3
+	},
+	"net_config":{
+		"main_send_buf_size":262144,
+		"minor_send_buf_size":262144
+	},
+	"main":{
+		"enabled":"on"
+	}
+}
+{
+	"bcd": {
+		"enabled":"off",
+		"sensitivity":"high",
+		"digital_sensitivity":"80"
+	}
+}
+{
+	"sys": {
+		"dev_alias": "TP-Link IPC",
+		"diagnose_mode": "off",
+		"submod_dbg_mode": 31
+	},
+	"basic": {
+		"timing_mode": "ntp",
+		"timezone": "UTC-00:00",
+		"zone_id": "Europe/London"
+	},
+	"ntp": {
+		"server": "0.0.0.0"
+	},
+	"dst": {
+		"enabled": "on",
+		"synced": "0",
+		"has_rule": "0"
+	},
+	"dst_manual": {
+		"enabled": "off",
+		"synced": "0",
+		"dst_savings": "60",
+		"dst_offset": "DST-01:00",
+		"start_month": "3",
+		"start_week": "5",
+		"start_day": "0",
+		"start_hour": "1",
+		"end_month": "10",
+		"end_week": "5",
+		"end_day": "0",
+		"end_hour": "2"
+	}
+}
+{
+	"tamper_notif_list": {
+		"msg_push_enabled": "on",
+		"light_alarm_enabled": "off",
+		"sound_alarm_enabled": "off"
+	}
+}
+{
+	"od_sensitivity":{
+		"max_od_sensitivity":100,
+		"min_od_sensitivity":1,
+		"od_sensitivity_cutoff_lm":35,
+		"od_sensitivity_cutoff_mh":70,
+		"od_sensitivity_low":20,
+		"od_sensitivity_medium":50,
+		"od_sensitivity_high":80,
+		"area_sensitivity":[0.81, 0.77, 0.72, 0.67, 0.61, 0.55]
+	}
+}{
+	"tamper_det": {
+		"enabled": "off",
+		"sensitivity": "medium",
+		"digital_sensitivity": "50"
+	}
+}{
+    "fov_info": {
+		"x_angle":84,
+		"y_angle":45,
+	}
+}{
+	"target_track_info": {
+		"enabled": "off",
+		"back_time": "30"
+	}
+}
+{
+	"basic": {
+		"enabled": "off"
+	},
+	"cloud": {
+		"cloudUrl": "n-da.tplinkcloud.com",
+	},
+	"key": {
+		"accessKey": "",
+		"accessSecret": ""
+	},
+	"strategy": {
+		"strategyID": "",
+		"collect_interval": 15,
+		"post_interval": 180
+	}
+}
+{
+	"reboot":{
+		"enabled":"off",
+		"day":"7",
+		"time":"03:00:00",
+		"random_range":30,
+		"last_reboot_time":0
+	}
+}
+{
+	"main":{
+		"enabled":"on"
+	}
+}
+{
+	"tour_config": {
+                "recurring_times_default": 10,
+                "recurring_duration_default": 36000,
+                "stay_time_default": 15000,
+        },
+}
+{
+	"hk_obd_setup_info": {
+		"setup_code": "",
+		"setup_payload": ""
+	}
+}
+{
+	"main": {
+		"listen_http": "80",
+		"listen_https": "443",
+		"http_recv_timeout": "1",
+		"enabled": "on",
+		"http_enabled": "off",
+		"https_enabled": "on"
+	},
+	"crt_key": {
+		"crt_pem": "",
+		"key_pem": ""
+	}
+}
+{
+	"status":{
+		"lastUpgradingSuccess":1
+	}
+}{
+	"uhttpd": {
+		"ext_port": "80"
+	},
+	"rtsp": {
+		"ext_port": "554"
+	},
+	"vhttpd": {
+		"ext_port": "8080"
+	}
+}{
+	"upnpc_info": {
+		"enabled": "off",
+		"mode": "manual"
+	}
+}
+{
+	"device_share": {
+		"sharepwd": ""
+	}
+}
+{
+	"hub_auth": {
+		"username": "admin",
+		"passwd": "",
+		"encrypt_type": "3",
+	}
+}
+{
+	"root": {
+		"ciphertext": "ghBErEKmx3NT/ULHINEAimzHUsrP8liPM8PXLbu1U9IhDWTwE3iUfpQYQYpqjH0Vele2dT+dGsTKf/UyYGb2J6Bfx7x6sIPv0GXdZ++zgSL5n4NlI4S7kIGKoTVmRcDeGOuYaRL4FvTW0epXZepWde8L+O9iZ4kYN9QOtnvVTN0=",
+		"comment": "",
+		"encrypt_type": "1",
+		"group": "root",
+		"passwd": "8A18A1FB002968D780C4ABBF8C5D7CEF07AD2834D3B76D41A40E7DAEA0DA4B62",
+		"username": "admin",
+		"factory_passwd": "zMiVw8Kw0oxKXL0"
+	}
+}
+{
+	"third_account": {
+		"ciphertext": "",
+		"comment": "",
+		"encrypt_type": "1",
+		"group": "root",
+		"passwd": "",
+		"username": "",
+		"enabled": "on"
+	}
+}
+{
+	"main": {
+		"quality": "3",
+		"bitrate": "1024",
+		"default_bitrate": "1024",
+		"encode_type": "H264",
+		"resolution": "1280*720",
+		"bitrate_type": "vbr",
+		"frame_rate": "65551",
+		"name":"VideoEncoder_1",
+		"smart_codec":"off",
+		"hdr": "1"
+	},
+	"minor": {
+		"quality": "3",
+		"bitrate": "256",
+		"encode_type": "H264",
+		"resolution": "640*360",
+		"bitrate_type": "vbr",
+		"frame_rate": "65551",
+		"name":"VideoEncoder_2"
+	},
+	"jpeg": {
+		"quality": "1",
+		"bitrate": "512",
+		"encode_type": "JPEG",
+		"resolution": "640*360",
+		"bitrate_type": "cbr",
+		"frame_rate": "65537",
+		"name":"VideoEncoder_3"
+	}
+}
+{
+	"jpeg":{
+		"encode_types":["JPEG"],
+		"frame_rates":[65537],
+		"bitrates":[512],
+		"bitrate_types":["cbr"],
+		"resolutions":["640*360"],
+		"qualitys":[1]
+	}
+}
+{
+	"wait_time":{
+		"wait_time_upgrade":60
+	}
+}
+{
+	"sta0": {
+		"on_boot": "on",
+		"connect_onboot": "off",
+		"security": "psk"
+	},
+	"ap0": {
+		"on_boot": "on",
+		"broadcast_ssid": "on",
+		"region": "CN",
+		"band": "2g",
+		"channel": 0,
+		"hwmode": "bgn",
+		"channel_width": "ht20",
+		"security": "none",
+		"encryption": "ccmp",
+		"wps": "off",
+		"isolation": "off",
+		"acl": "none"
+	},
+	"monitor0": {
+		"on_boot": "off"
+	},
+	"default_ap": {
+		"ap": "ap0"
+	},
+	"dhcps_def": {
+		"dev_name": "wlan1",
+		"gateway": "192.168.191.1",
+		"netmask": "255.255.255.0",
+		"pri_dns": "192.168.191.1",
+		"snd_dns": "0.0.0.0",
+		"lease_time": "7200",
+		"pool_start": "192.168.191.100",
+		"pool_end": "192.168.191.199"
+	},
+	"basic": {
+		"factory_flag": "on",
+		"tx_capability": 35,
+		"rx_capability": 30
+	}
+}root:x:0:
+daemon:x:1:
+adm:x:4:
+mail:x:8:
+audio:x:29:
+www-data:x:33:
+ftp:x:55:
+users:x:100:
+network:x:101:
+nogroup:x:65534:
+127.0.0.1 localhost
+#!/bin/sh
+# ÈÄöËøáÂèëÈÄÅDMSÊ∂àÊÅØÁöÑÊñπÂºèÈÄöÁü•capÁöÑsd_cardÊ®°ÂùóÂ§ÑÁêÜ‰∫ã‰ª∂
+# index‰ª£Ë°®SDÂç°Á¥¢ÂºïÔºåÂΩìÂâç‰ªÖÊîØÊåÅ‰∏Ä‰∏™SDÂç°ÊßΩÔºåÈªòËÆ§‰∏∫1
+# status‰ª£Ë°®ÊèíÊãîÁä∂ÊÄÅ
+
+[ "$DEVNAME" != "mmcblk0" ] && return 0
+
+deal_ethernet_driver() {
+	killall handle_factory_mode_network
+	handle_factory_mode_network &
+}
+
+case "$ACTION" in
+	add)
+		echo "disk on" > /dev/console
+		ubus call sd_card plug_status '{"index":1, "status":1}'
+
+		sleep 1
+		deal_ethernet_driver
+		;;
+	remove)
+		echo "disk off" > /dev/console
+		ubus call sd_card plug_status '{"index":1, "status":0}'
+		;;
+esac
+
+
+[ "$ACTION" = add ] && {
+	[ "$DEVPATH" != "${DEVPATH#*usb}" ] && {
+		if [ "$INTERFACE" = "eth0" -o "$INTERFACE" = "eth1" ]; then
+			MAC_conf=$(uci get device_info.info.mac | tr - :)
+			MAC_br=$(ifconfig br-wan | awk '$1=="br-wan"{print $5}')
+			c=0
+			while [ "$MAC_br" != "$MAC_conf" ]
+			do
+				c=$((c+1))
+				[ $c -gt 3 ] && { ifconfig br-wan hw ether $MAC_conf ; break ; }
+				echo "======br-wan MAC is wrong, wait" >/dev/console
+				sleep 1
+				MAC_conf=$(uci get device_info.info.mac|tr - :)
+				MAC_br=$(ifconfig br-wan | awk '$1=="br-wan"{print $5}')
+			done
+			ifconfig | grep $INTERFACE && ifconfig $INTERFACE down
+			ifconfig $INTERFACE hw ether $MAC_br
+			ifconfig $INTERFACE up
+			brctl addif br-wan $INTERFACE
+			MAC_if=$(ifconfig $INTERFACE| awk -v i=$INTERFACE 'BEGIN{}{if($1==i){print $5}}')
+			if [ "$MAC_br" != "$MAC_if" ]; then
+				echo "======$INTERFACE MAC is wrong : $MAC_if, now set to $MAC_br" >/dev/console
+				ifconfig $INTERFACE down
+				ifconfig $INTERFACE hw ether $MAC_br
+				ifconfig $INTERFACE up
+			fi
+			arping -b -I br-wan -w 1 -c 3 $(ifconfig br-wan | awk -F: '$1~"inet addr"{print $2}'|awk '{print $1}') &
+		fi
+	}
+}
+
+
+[ "$ACTION" = add ] && {
+
+	if [ "$INTERFACE" = "esp0" ]; then
+		MAC_conf=$(uci get device_info.info.mac | tr - :)
+		MAC_br=$(ifconfig br-wan | awk '$1=="br-wan"{print $5}')
+		c=0
+		while [ "$MAC_br" != "$MAC_conf" ]
+		do
+			c=$((c+1))
+			[ $c -gt 3 ] && { ifconfig br-wan hw ether $MAC_conf ; break ; }
+			echo "======br-wan MAC is wrong, wait" >/dev/console
+			usleep 1000
+			MAC_conf=$(uci get device_info.info.mac|tr - :)
+			MAC_br=$(ifconfig br-wan | awk '$1=="br-wan"{print $5}')
+		done
+		echo "======$INTERFACE init" >/dev/console
+		while [ "$(ifconfig | grep -ci $INTERFACE)" -eq 0 ]
+		do
+			ifconfig $INTERFACE up
+			usleep 1000
+		done
+		ifconfig | grep $INTERFACE && ifconfig $INTERFACE down
+		ifconfig $INTERFACE hw ether $MAC_br
+		ifconfig $INTERFACE up
+		brctl addif br-wan $INTERFACE
+		MAC_if=$(ifconfig $INTERFACE| awk -v i=$INTERFACE 'BEGIN{}{if($1==i){print $5}}')
+		if [ "$MAC_br" != "$MAC_if" ]; then
+			echo "======$INTERFACE MAC is wrong : $MAC_if, now set to $MAC_br" >/dev/console
+			ifconfig $INTERFACE down
+			ifconfig $INTERFACE hw ether $MAC_br
+			ifconfig $INTERFACE up
+		fi
+		arping -b -I br-wan -w 1 -c 3 $(ifconfig br-wan | awk -F: '$1~"inet addr"{print $2}'|awk '{print $1}') &
+	fi
+}
+
+
+#!/bin/sh
+
+# Copyright (C) 2019 TPLINK
+
+case "$ACTION" in
+        plug-in)
+                ubus call wan_status phy_status '{"status":1}'
+                echo -e "===>hotplug_ethernet in" > /dev/console
+                ;;
+        plug-out)
+                ubus call wan_status phy_status '{"status":0}'
+                echo -e "===>hotplug_ethernet out" > /dev/console
+                ;;
+esac
+
+# uncomment me to log hotplug events
+# DEVPATH is set {
+# 	exec logger -s -t hotplug -p daemon.info "name=%DEVNAME%, path=%DEVPATH%"
+# }
+
+$include /etc/hotplug2-platform.rules
+
+DEVNAME ~~ (^null$|^full$|^ptmx$|^zero$|^gpio|^hvc) {
+	makedev /dev/%DEVNAME% 0666
+	next-event
+}
+
+DEVNAME == mapper/control {
+	makedev /dev/%DEVNAME% 0600
+	next-event
+}
+
+ACTION == add, DEVPATH is set {
+	makedev /dev/%DEVNAME% 0644
+}
+
+ACTION == add, DEVPATH is set, DEVNAME ~~ ^tty {
+	chmod 0666 /dev/%DEVNAME%
+}
+
+ACTION == add, DEVPATH is set, DEVNAME ~~ ^ppp {
+	chmod 0600 /dev/%DEVNAME%
+}
+
+ACTION == remove, DEVPATH is set, MAJOR is set, MINOR is set {
+	remove /dev/%DEVNAME%
+}
+
+FIRMWARE is set, ACTION == add {
+	exec /sbin/hotplug-call firmware
+	load-firmware /lib/firmware
+	next-event
+}
+
+SUBSYSTEM == platform {
+	exec /sbin/hotplug-call %SUBSYSTEM%
+}
+$include /etc/hotplug2-common.rules
+
+$include /etc/hotplug2-common.rules
+
+SUBSYSTEM ~~ (^net$|^input$|^button$|^usb$|^ieee1394$|^block$|^atm$|^zaptel$|^tty$) {
+	exec /sbin/hotplug-call %SUBSYSTEM%
+}
+
+#!/bin/sh /etc/rc.common
+# Copyright (c) 2014-2015 TP-LINK Technologies CO.,LTD.
+# Copyright (c) 2013 Qualcomm Atheros, Inc.
+# Copyright (C) 2006-2011 OpenWrt.org
+
+START=05
+
+load_modules() {
+	[ -d /etc/modules.d ] && {
+		cd /etc/modules.d
+		sed 's/^[^#]/insmod &/' $* | ash 2>&- || :
+	}
+}
+
+zram_enable() {
+	[ ! -e /sys/block/zram0 ] && return 0
+	echo 16777216 > /sys/block/zram0/disksize
+	mkswap /dev/zram0
+	swapon /dev/zram0
+	echo 100 > /proc/sys/vm/swappiness
+}
+
+start() {
+	zram_enable
+	mkdir -p /var/run
+	mkdir -p /var/log
+	mkdir -p /var/lock
+	mkdir -p /tmp/usbdisk
+	touch /var/log/wtmp
+	touch /var/log/lastlog
+	touch /tmp/resolv.conf.auto
+	ln -sf /tmp/resolv.conf.auto /tmp/resolv.conf
+	grep -q debugfs /proc/filesystems && mount -t debugfs debugfs /sys/kernel/debug
+
+	load_modules /etc/modules.d/*
+
+	killall -q hotplug2
+	[ -x /sbin/hotplug2 ] && /sbin/hotplug2 --override --persistent \
+			--set-rules-file /etc/hotplug2.rules \
+			--set-coldplug-cmd /sbin/udevtrigger \
+			--max-children 1 >/dev/null 2>&1 &
+
+	# create /dev/root if it doesn't exist
+	[ -e /dev/root -o -h /dev/root ] || {
+		rootdev=$(awk 'BEGIN { RS=" "; FS="="; } $1 == "root" { print $2 }' < /proc/cmdline)
+		[ -n "$rootdev" ] && ln -s "$rootdev" /dev/root
+	}
+
+}
+
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2008-2012 OpenWrt.org
+
+START=20
+
+start() {
+	/bin/main &
+}
+
+stop() {
+	service_stop /bin/main
+}
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2008-2012 OpenWrt.org
+
+START=20
+
+start() {
+	[ -e /tmp/recovery_mode ] && /usr/bin/mini_main &
+	[ -e /tmp/recovery_mode ] && /etc/init.d/monitor stop
+}
+
+stop() {
+	service_stop /usr/bin/mini_main
+}
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2008-2012 OpenWrt.org
+
+START=15
+
+start() {
+	service_start /bin/monitor
+}
+
+stop() {
+	service_stop /bin/monitor
+}
+#!/bin/sh
+# Copyright (C) 2006 OpenWrt.org
+
+run_scripts() {
+	for i in /etc/rc.d/$1*; do
+		[ -x $i ] && $i $2 2>&1
+	done
+}
+
+run_scripts "$1" "$2" &
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006 OpenWrt.org
+
+START=99
+start() {
+	[ -f /etc/sysctl.conf ] && sysctl -p -e >&-
+}
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006 OpenWrt.org
+
+STOP=99
+stop() {
+	sync
+	umount -a -d -r
+}
+::sysinit:/etc/init.d/rcS S boot
+::shutdown:/etc/init.d/rcS K shutdown
+ttyS1::askfirst:/bin/login
+TZif2                                  Ä   »\Ä»˙'p…’Ä €Z∫6 ip ~hÄ!Iap"^JÄ#)Cp$Gg %_&'I &ÚA(+ (“#  q◊    ~ê  pÄ LMT CDT CST       TZif2                                  ¯       ˇˇˇˇ~6C)ˇˇˇˇ»\Äˇˇˇˇ»˙'pˇˇˇˇ…’Äˇˇˇˇ €Z    ∫6     ip     ~hÄ    !Iap    "^JÄ    #)Cp    $Gg     %_    &'I     &ÚA    (+     (“#   q◊    ~ê  pÄ LMT CDT CST       
+CST-8
+kdms
+EU:5CFA4B8CF3F7D826581082F1C0CFAAE6
+US:4A5AC2DFE5BAD076229EF8DAF2A76800
+JP:1BD526DE6C3D1B4B6423B3D707A809D2
+KR:F332B09F188E77B56426392039050499
+TC70(EU):989BA3390434F0BBE0AAFE7837BB60A6
+root:$1$ciCib83f$p1yofmGYSQxu8OI2M8/Mz.:0:0:root:/root:/bin/ash
+nobody:*:65534:65534:nobody:/var:/bin/false
+admin:*:500:500:admin:/var:/bin/false
+guest:*:500:500:guest:/var:/bin/false
+ftp:*:55:55:ftp:/home/ftp:/bin/false
+#!/bin/sh
+
+mount() {
+    /bin/busybox mount -o noatime "$@"
+}
+
+mount_tmpfs() {
+    mount -t tmpfs -o mode=0755 root /overlay
+}
+
+mount_sp_rom() {
+    spdev=$(awk 'BEGIN { RS=" "; FS="="; } $1 == "spdev" { print $2 }' < /proc/cmdline)
+    if [ "$spdev" != "" ]; then
+        mount -t squashfs -o relatime $spdev /sp_rom
+    fi
+}
+
+pivot() { # <new_root> <old_root>
+	mount -o move /proc $1/proc && \
+	pivot_root $1 $1$2 && {
+		mount -o move $2/dev /dev
+		mount -o move $2/tmp /tmp
+		mount -o move $2/sys /sys 2>&-
+		mount -o move $2/overlay /overlay 2>&-
+		mount | grep -q "/sp_rom" || touch /tmp/recovery_mode
+		return 0
+	}
+}
+
+fopivot() { # <rw_root> <ro_root>
+	if [ -e /proc/cmdline ]; then
+		kernel_major_version=$(uname -r|awk -F. '{print $1}')
+		if [ "$kernel_major_version" = "4" ] || [ "$kernel_major_version" = "5" ]; then
+			mkdir -p $1/root $1/work
+			mount | grep -q "/sp_rom" \
+			&& mount -o noatime,lowerdir=/sp_rom:/,upperdir=$1/root,workdir=$1/work -t overlay "overlayfs:$1" /mnt \
+			|| mount -o noatime,lowerdir=/,upperdir=$1/root,workdir=$1/work -t overlay "overlayfs:$1" /mnt
+		else
+			mount | grep -q "/sp_rom" && {
+				mount -o noatime,lowerdir=/,upperdir=/sp_rom -t overlayfs "overlayfs:$1" /mnt
+				mount -o noatime,lowerdir=/mnt,upperdir=$1 -t overlayfs "overlayfs:$1" /mnt
+			} || mount -o noatime,lowerdir=/,upperdir=$1 -t overlayfs "overlayfs:$1" /mnt
+		fi
+	fi
+    pivot /mnt $2
+}
+
+do_move_devtmpfs() {
+    local mnt="$(grep devtmpfs /proc/mounts)"
+          mnt="${mnt#* }"; mnt="${mnt%% *}"
+
+    [ "$mnt" = "/dev" ] || mount -o move "$mnt" /dev
+}
+
+mount_essential_fs() {
+    mount proc /proc -t proc
+    mount sysfs /sys -t sysfs
+    pi_size=$(awk '/MemTotal:/ {l=5242880;mt=($2*1024);print((s=mt/2)<l)&&(mt>l)?mt-l:s}' /proc/meminfo)
+    mount tmpfs /tmp -t tmpfs -o size=$pi_size,nosuid,nodev,mode=1777
+}
+
+mount_device_fs() {
+    if grep -q devtmpfs /proc/mounts; then
+        do_move_devtmpfs
+	else
+        mount -t tmpfs tmpfs /dev -o mode=0755,size=512K
+    fi
+}
+
+init_hotplug2() {
+    if [ -e /sbin/hotplug2 ]; then
+        [ -c /dev/console ] || mknod /dev/console c 5 1
+        /sbin/hotplug2 --set-worker /lib/hotplug2/worker_fork.so --set-rules-file /etc/hotplug2-init.rules --no-persistent --set-coldplug-cmd /sbin/udevtrigger
+        /sbin/hotplug2 --set-worker /lib/hotplug2/worker_fork.so --set-rules-file /etc/hotplug2-init.rules --persistent &
+        echo "" > /proc/sys/kernel/hotplug
+    else
+        echo "hotplug2 not found" > /dev/console
+    fi
+}
+
+init_shm() {
+    [ -d /dev/shm ] || mkdir -p /dev/shm
+}
+
+mount_devpts() {
+    [ -d /dev/pts ] || mkdir -p /dev/pts
+    mount devpts /dev/pts -t devpts
+}
+
+init_console() {
+	exec </dev/console >/dev/console 2>&0
+}
+
+mount_jffs2() {
+	mkdir -p /tmp/usr_def_audio
+	mount -t jffs2 /dev/mtdblock8 /tmp/usr_def_audio
+}
+
+mount_root() {
+    mount_tmpfs
+    mount_sp_rom
+    fopivot /overlay /rom
+}
+
+# insmod_trk() source is nvmp/tp_package/lib/libtrk/src/files/bin/trk_ctl.sh
+insmod_trk() {
+    dir=/lib/modules/$(uname -r)
+    mod=ktrk.ko
+    path=/dev/mtd1
+    keyword=devId
+    devId=`cat $path | grep $keyword | awk -F '\"'$keyword'\":\"' '{print $2}' | awk -F '\",' '{print $1}' | cut -d\" -f1`
+    if [ ! -e $path ]; then
+        echo $path" not found."
+        return;
+    fi
+    if [ ! -e ${dir}/${mod} ]; then
+        echo $mod" not found."
+        return;
+    fi
+    if [ -z $devId ]; then
+        echo "devId is null"
+    else
+        mknod /dev/derive_key c 229 0
+        insmod ${dir}/${mod} deviceid=$devId
+    fi
+}
+
+run_init() {
+    exec env - PATH="/bin:/sbin:/usr/bin:/usr/sbin" "/sbin/init" 2>&0
+}
+
+mount_essential_fs
+mount_device_fs
+init_hotplug2
+insmod_trk
+init_shm
+mount_devpts
+init_console
+mount_root
+run_init
+
+#!/bin/sh
+[ -f /etc/banner ] && cat /etc/banner
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+export HOME=$(grep -e "^${USER:-root}:" /etc/passwd | cut -d ":" -f 6)
+export HOME=${HOME:-/root}
+export PS1='\u@\h:\w\$ '
+
+[ -x /bin/more ] || alias more=less
+[ -x /usr/bin/vim ] && alias vi=vim || alias vim=vi
+
+[ -z "$KSH_VERSION" -o \! -s /etc/mkshrc ] || . /etc/mkshrc
+
+[ -x /sbin/arp ] || arp() { cat /proc/net/arp; }
+[ -x /usr/bin/ldd ] || ldd() { LD_TRACE_LOADED_OBJECTS=1 $*; }
+# Internet (IP) protocols
+#
+# Updated from http://www.iana.org/assignments/protocol-numbers and other
+# sources.
+# New protocols will be added on request if they have been officially
+# assigned by IANA and are not historical.
+# If you need a huge list of used numbers please install the nmap package.
+
+ip	0	IP		# internet protocol, pseudo protocol number
+#hopopt	0	HOPOPT		# IPv6 Hop-by-Hop Option [RFC1883]
+icmp	1	ICMP		# internet control message protocol
+igmp	2	IGMP		# Internet Group Management
+ggp	3	GGP		# gateway-gateway protocol
+ipencap	4	IP-ENCAP	# IP encapsulated in IP (officially ``IP'')
+st	5	ST		# ST datagram mode
+tcp	6	TCP		# transmission control protocol
+egp	8	EGP		# exterior gateway protocol
+igp	9	IGP		# any private interior gateway (Cisco)
+pup	12	PUP		# PARC universal packet protocol
+udp	17	UDP		# user datagram protocol
+hmp	20	HMP		# host monitoring protocol
+xns-idp	22	XNS-IDP		# Xerox NS IDP
+rdp	27	RDP		# "reliable datagram" protocol
+iso-tp4	29	ISO-TP4		# ISO Transport Protocol class 4 [RFC905]
+xtp	36	XTP		# Xpress Transfer Protocol
+ddp	37	DDP		# Datagram Delivery Protocol
+idpr-cmtp 38	IDPR-CMTP	# IDPR Control Message Transport
+ipv6	41	IPv6		# Internet Protocol, version 6
+ipv6-route 43	IPv6-Route	# Routing Header for IPv6
+ipv6-frag 44	IPv6-Frag	# Fragment Header for IPv6
+idrp	45	IDRP		# Inter-Domain Routing Protocol
+rsvp	46	RSVP		# Reservation Protocol
+gre	47	GRE		# General Routing Encapsulation
+esp	50	IPSEC-ESP	# Encap Security Payload [RFC2046]
+ah	51	IPSEC-AH	# Authentication Header [RFC2402]
+skip	57	SKIP		# SKIP
+ipv6-icmp 58	IPv6-ICMP	# ICMP for IPv6
+ipv6-nonxt 59	IPv6-NoNxt	# No Next Header for IPv6
+ipv6-opts 60	IPv6-Opts	# Destination Options for IPv6
+rspf	73	RSPF CPHB	# Radio Shortest Path First (officially CPHB)
+vmtp	81	VMTP		# Versatile Message Transport
+eigrp	88	EIGRP		# Enhanced Interior Routing Protocol (Cisco)
+ospf	89	OSPFIGP		# Open Shortest Path First IGP
+ax.25	93	AX.25		# AX.25 frames
+ipip	94	IPIP		# IP-within-IP Encapsulation Protocol
+etherip	97	ETHERIP		# Ethernet-within-IP Encapsulation [RFC3378]
+encap	98	ENCAP		# Yet Another IP encapsulation [RFC1241]
+#	99			# any private encryption scheme
+pim	103	PIM		# Protocol Independent Multicast
+ipcomp	108	IPCOMP		# IP Payload Compression Protocol
+vrrp	112	VRRP		# Virtual Router Redundancy Protocol
+l2tp	115	L2TP		# Layer Two Tunneling Protocol [RFC2661]
+isis	124	ISIS		# IS-IS over IPv4
+sctp	132	SCTP		# Stream Control Transmission Protocol
+fc	133	FC		# Fibre Channel
+
+#!/bin/sh
+# Copyright (C) 2006-2012 OpenWrt.org
+
+. $IPKG_INSTROOT/lib/functions/service.sh
+
+initscript=$1
+action=${2:-help}
+shift 2
+
+start() {
+	return 0
+}
+
+stop() {
+	return 0
+}
+
+reload() {
+	return 1
+}
+
+restart() {
+	trap '' TERM
+	stop "$@"
+	start "$@"
+}
+
+boot() {
+	start "$@"
+}
+
+shutdown() {
+	stop
+}
+
+disable() {
+	name="$(basename "${initscript}")"
+	rm -f "$IPKG_INSTROOT"/etc/rc.d/S??$name
+	rm -f "$IPKG_INSTROOT"/etc/rc.d/K??$name
+}
+
+enable() {
+	name="$(basename "${initscript}")"
+	disable
+	[ -n "$START" -o -n "$STOP" ] || {
+		echo "/etc/init.d/$name does not have a START or STOP value"
+		return 1
+	}
+	[ "$START" ] && ln -s "../init.d/$name" "$IPKG_INSTROOT/etc/rc.d/S${START}${name##S[0-9][0-9]}"
+	[ "$STOP"  ] && ln -s "../init.d/$name" "$IPKG_INSTROOT/etc/rc.d/K${STOP}${name##K[0-9][0-9]}"
+	[ "$RESUME" ] && ln -s "../init.d/$name" "$IPKG_INSTROOT/etc/rc.d/R${RESUME}${name##S[0-9][0-9]}" \
+	&& ln -s "../init.d/$name" "$IPKG_INSTROOT/etc/rc.d/T$(printf "%02d" "$(expr 99 - ${RESUME})")${name##K[0-9][0-9]}"
+}
+
+enabled() {
+	name="$(basename "${initscript}")"
+	[ -x "$IPKG_INSTROOT/etc/rc.d/S${START}${name##S[0-9][0-9]}" ]
+}
+
+depends() {
+	return 0
+}
+
+terminate() {
+	return 0
+}
+
+resume() {
+	return 0
+}
+
+list_contains() {
+	local var="$1"
+	local str="$2"
+	local val
+
+	eval "val=\" \${$var} \""
+	[ "${val%% $str *}" != "$val" ]
+}
+
+help() {
+	cat <<EOF
+Syntax: $initscript [command]
+
+Available commands:
+	start	Start the service
+	stop	Stop the service
+	restart	Restart the service
+	reload	Reload configuration files (or restart if that fails)
+	enable	Enable service autostart
+	disable	Disable service autostart
+	terminate kill process
+	resume	resume process
+$EXTRA_HELP
+EOF
+}
+
+${INIT_TRACE:+set -x}
+
+. "$initscript"
+
+ALL_COMMANDS="start stop reload restart boot shutdown enable disable terminate resume enabled depends ${EXTRA_COMMANDS}"
+list_contains ALL_COMMANDS "$action" || action=help
+[ "$action" = "reload" ] && action='eval reload "$@" || restart "$@" && :'
+$action "$@"
+echo		7/tcp
+echo		7/udp
+discard		9/tcp
+discard		9/udp
+daytime		13/tcp
+daytime		13/udp
+netstat		15/tcp
+chargen		19/tcp
+chargen		19/udp
+ftp-data	20/tcp
+ftp		21/tcp
+ssh		22/tcp
+ssh		22/udp
+telnet		23/tcp
+smtp		25/tcp
+time		37/tcp
+time		37/udp
+whois		43/tcp
+domain		53/tcp
+domain		53/udp
+bootps		67/tcp
+bootps		67/udp
+bootpc		68/tcp
+bootpc		68/udp
+tftp		69/udp
+finger		79/tcp
+www		80/tcp		http
+kerberos	88/tcp		kerberos5 krb5 kerberos-sec
+kerberos	88/udp		kerberos5 krb5 kerberos-sec
+pop3		110/tcp
+pop3		110/udp
+sunrpc		111/tcp
+sunrpc		111/udp
+auth		113/tcp		ident
+sftp		115/tcp
+nntp		119/tcp
+ntp		123/tcp
+ntp		123/udp
+netbios-ns	137/tcp
+netbios-ns	137/udp
+netbios-dgm	138/tcp
+netbios-dgm	138/udp
+netbios-ssn	139/tcp
+netbios-ssn	139/udp
+imap2		143/tcp		imap
+imap2		143/udp		imap
+snmp		161/tcp
+snmp		161/udp
+snmp-trap	162/tcp		snmptrap
+snmp-trap	162/udp		snmptrap
+xdmcp		177/tcp
+xdmcp		177/udp
+bgp		179/tcp
+bgp		179/udp
+imap3		220/tcp
+imap3		220/udp
+ldap		389/tcp
+ldap		389/udp
+https		443/tcp
+https		443/udp
+microsoft-ds	445/tcp
+microsoft-ds	445/udp
+isakmp		500/tcp
+isakmp		500/udp
+rtsp		554/tcp
+rtsp		554/udp
+ipp		631/tcp
+ipp		631/udp
+syslog		514/udp
+printer		515/tcp		spooler
+dhcpv6-client	546/tcp
+dhcpv6-client	546/udp
+dhcpv6-server	547/tcp
+dhcpv6-server	547/udp
+afpovertcp	548/tcp
+afpovertcp	548/udp
+nntps		563/tcp		snntp
+nntps		563/udp		snntp
+ldaps		636/tcp
+ldaps		636/udp
+tinc		655/tcp
+tinc		655/udp
+rsync		873/tcp
+rsync		873/udp
+ftps-data	989/tcp
+ftps		990/tcp
+imaps		993/tcp
+imaps		993/udp
+ircs		994/tcp
+ircs		994/udp
+pop3s		995/tcp
+pop3s		995/udp
+socks		1080/tcp
+socks		1080/udp
+openvpn		1194/tcp
+openvpn		1194/udp
+l2f		1701/tcp	l2tp
+l2f		1701/udp	l2tp
+radius		1812/tcp
+radius		1812/udp
+radius-acct	1813/tcp	radacct
+radius-acct	1813/udp	radacct
+nfs		2049/tcp
+nfs		2049/udp
+dict		2628/tcp
+dict		2628/udp
+gpsd		2947/tcp
+gpsd		2947/udp
+icpv2		3130/tcp	icp
+icpv2		3130/udp	icp
+mysql		3306/tcp
+mysql		3306/udp
+nut		3493/tcp
+nut		3493/udp
+distcc		3632/tcp
+distcc		3632/udp
+daap		3689/tcp
+daap		3689/udp
+svn		3690/tcp	subversion
+svn		3690/udp	subversion
+epmd		4369/tcp
+epmd		4369/udp
+iax		4569/tcp
+iax		4569/udp
+mtn		4691/tcp
+mtn		4691/udp
+munin		4949/tcp
+sip		5060/tcp
+sip		5060/udp
+sip-tls		5061/tcp
+sip-tls		5061/udp
+xmpp-client	5222/tcp	jabber-client
+xmpp-client	5222/udp	jabber-client
+xmpp-server	5269/tcp	jabber-server
+xmpp-server	5269/udp	jabber-server
+mdns		5353/tcp
+mdns		5353/udp
+postgresql	5432/tcp	postgres
+postgresql	5432/udp	postgres
+x11		6000/tcp
+x11		6000/udp
+mysql-proxy	6446/tcp
+mysql-proxy	6446/udp
+bacula-dir	9101/tcp
+bacula-dir	9101/udp
+bacula-fd	9102/tcp
+bacula-fd	9102/udp
+bacula-sd	9103/tcp
+bacula-sd	9103/udp
+nbd		10809/tcp
+zabbix-agent	10050/tcp
+zabbix-agent	10050/udp
+zabbix-trapper	10051/tcp
+zabbix-trapper	10051/udp
+hkp		11371/tcp
+hkp		11371/udp
+ssmtp		465/tcp		smtps
+spamd		783/tcp
+zebrasrv	2600/tcp
+zebra		2601/tcp
+ripd		2602/tcp
+ripngd		2603/tcp
+ospfd		2604/tcp
+bgpd		2605/tcp
+ospf6d		2606/tcp
+ospfapi		2607/tcp
+isisd		2608/tcp
+sane-port	6566/tcp	sane saned
+ircd		6667/tcp
+git		9418/tcp
+
+root:x:0:0:99999:7:::
+daemon:*:0:0:99999:7:::
+ftp:*:0:0:99999:7:::
+network:*:0:0:99999:7:::
+nobody:*:0:0:99999:7:::
+/bin/ash
+kernel.panic=3
+net.core.wmem_max=524288
+net.ipv4.conf.default.arp_ignore=1
+net.ipv4.conf.all.arp_ignore=1
+net.ipv4.ip_forward=0
+net.ipv4.icmp_echo_ignore_broadcasts=1
+net.ipv4.icmp_ignore_bogus_error_responses=1
+net.ipv4.tcp_ecn=0
+net.ipv4.tcp_fin_timeout=30
+net.ipv4.tcp_keepalive_time=120
+net.ipv4.tcp_syncookies=1
+net.ipv4.tcp_timestamps=1
+net.ipv4.tcp_sack=1
+net.ipv4.tcp_dsack=1
+net.ipv4.tcp_wmem = 4096  131072  524288
+
+net.ipv6.conf.all.forwarding=1
+
+net.netfilter.nf_conntrack_acct=1
+net.netfilter.nf_conntrack_checksum=0
+net.netfilter.nf_conntrack_max=16384
+net.netfilter.nf_conntrack_tcp_timeout_established=3600
+net.netfilter.nf_conntrack_udp_timeout=60
+net.netfilter.nf_conntrack_udp_timeout_stream=180
+
+# disable bridge firewalling by default
+net.bridge.bridge-nf-call-arptables=0
+net.bridge.bridge-nf-call-ip6tables=0
+
+vm.overcommit_memory=1
+vm.overcommit_ratio=50
+vm.min_free_kbytes=598
+vm.dirty_background_ratio=2
+vm.dirty_expire_centisecs=500
+vm.dirty_ratio=2
+vm.dirty_writeback_centisecs=100
+vm.admin_reserve_kbytes=0
+
+# disable br iptables by default
+net.bridge.bridge-nf-call-iptables=1
+#
+# service: simple wrapper around start-stop-daemon
+#
+# Usage: service ACTION EXEC ARGS...
+#
+# Action:
+#   -C   check if EXEC is alive
+#   -S   start EXEC, passing it ARGS as its arguments
+#   -K   kill EXEC, sending it a TERM signal if not specified otherwise
+#
+# Environment variables exposed:
+#   SERVICE_DAEMONIZE    run EXEC in background
+#   SERVICE_WRITE_PID    create a pid-file and use it for matching
+#   SERVICE_MATCH_EXEC   use EXEC command-line for matching (default)
+#   SERVICE_MATCH_NAME   use EXEC process name for matching
+#   SERVICE_USE_PID      assume EXEC create its own pid-file and use it for matching
+#   SERVICE_NAME         process name to use (default to EXEC file part)
+#   SERVICE_PID_FILE     pid file to use (default to /var/run/$SERVICE_NAME.pid)
+#   SERVICE_SIG          signal to send when using -K
+#   SERVICE_SIG_RELOAD   default signal used when reloading
+#   SERVICE_SIG_STOP     default signal used when stopping
+#   SERVICE_STOP_TIME    time to wait for a process to stop gracefully before killing it
+#   SERVICE_UID          user EXEC should be run as
+#   SERVICE_GID          group EXEC should be run as
+#
+#   SERVICE_DEBUG        don't do anything, but show what would be done
+#   SERVICE_QUIET        don't print anything
+#
+
+SERVICE_QUIET=1
+SERVICE_SIG_RELOAD="HUP"
+SERVICE_SIG_STOP="TERM"
+SERVICE_STOP_TIME=5
+SERVICE_MATCH_EXEC=1
+
+service() {
+	local ssd
+	local exec
+	local name
+	local start
+	ssd="${SERVICE_DEBUG:+echo }start-stop-daemon${SERVICE_QUIET:+ -q}"
+	case "$1" in
+	  -C)
+		ssd="$ssd -K -t"
+		;;
+	  -S)
+		ssd="$ssd -S${SERVICE_DAEMONIZE:+ -b}${SERVICE_WRITE_PID:+ -m}"
+		start=1
+		;;
+	  -K)
+		ssd="$ssd -K${SERVICE_SIG:+ -s $SERVICE_SIG}"
+		;;
+	  *)
+		echo "service: unknown ACTION '$1'" 1>&2
+		return 1
+	esac
+	shift
+	exec="$1"
+	[ -n "$exec" ] || {
+		echo "service: missing argument" 1>&2
+		return 1
+	}
+	[ -x "$exec" ] || {
+		echo "service: file '$exec' is not executable" 1>&2
+		return 1
+	}
+	name="${SERVICE_NAME:-${exec##*/}}"
+	[ -z "$SERVICE_USE_PID$SERVICE_WRITE_PID$SERVICE_PID_FILE" ] \
+		|| ssd="$ssd -p ${SERVICE_PID_FILE:-/var/run/$name.pid}"
+	[ -z "$SERVICE_MATCH_NAME" ] || ssd="$ssd -n $name"
+	ssd="$ssd${SERVICE_UID:+ -c $SERVICE_UID${SERVICE_GID:+:$SERVICE_GID}}"
+	[ -z "$SERVICE_MATCH_EXEC$start" ] || ssd="$ssd -x $exec"
+	shift
+	$ssd${1:+ -- "$@"}
+}
+
+service_check() {
+	service -C "$@"
+}
+
+service_signal() {
+	SERVICE_SIG="${SERVICE_SIG:-USR1}" service -K "$@"
+}
+
+service_start() {
+	service -S "$@"
+}
+
+service_stop() {
+	local try
+	SERVICE_SIG="${SERVICE_SIG:-$SERVICE_SIG_STOP}" service -K "$@" || return 1
+	while [ $((try++)) -lt $SERVICE_STOP_TIME ]; do
+		service -C "$@" || return 0
+		sleep 1
+	done
+	SERVICE_SIG="KILL" service -K "$@"
+	sleep 1
+	! service -C "$@"
+}
+
+service_reload() {
+	SERVICE_SIG="${SERVICE_SIG:-$SERVICE_SIG_RELOAD}" service -K "$@"
+}
+
+service_kill() {
+	cat 1>&2 << __END_OF_WARNING__
+#
+# WARNING: the 'service_kill' function is now deprecated and might be
+# removed soon. Consider using the other new service_* wrappers instead.
+#
+__END_OF_WARNING__
+	local name="${1}"
+	local pid="${2:-$(pidof "$name")}"
+	local grace="${3:-5}"
+
+	[ -f "$pid" ] && pid="$(head -n1 "$pid" 2>/dev/null)"
+
+	for pid in $pid; do
+		[ -d "/proc/$pid" ] || continue
+		local try=0
+		kill -TERM $pid 2>/dev/null && \
+			while grep -qs "$name" "/proc/$pid/cmdline" && [ $((try++)) -lt $grace ]; do sleep 1; done
+		kill -KILL $pid 2>/dev/null && \
+			while grep -qs "$name" "/proc/$pid/cmdline"; do sleep 1; done
+	done
+}
+
+
+
