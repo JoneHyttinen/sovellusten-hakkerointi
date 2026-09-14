@@ -6,3 +6,16 @@ plugins:
   - jekyll-remote-theme
   - jekyll-github-metadata
 github: [metadata]
+
+# These directories contain extracted firmware/rootfs dumps used for the
+# writeups (binaries, device files, and dangling symlinks like etc/sensor
+# that point to paths that only exist on the original device). Jekyll calls
+# File.realpath on every file it scans, which raises Errno::ENOENT on a
+# broken symlink and aborts the whole build, so keep it out of the crawl.
+exclude:
+  - h6-onkohan-tama-turvallinen-kayttaa/dump-rootfs
+  - h6-onkohan-tama-turvallinen-kayttaa/extractions
+  - h6-onkohan-tama-turvallinen-kayttaa/tp-link-decrypt
+  - "**/*.bin"
+  - "**/*.bin.dec"
+  - "**/*.squashfs"
