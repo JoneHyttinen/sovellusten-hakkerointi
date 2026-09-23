@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<title>VULNERABLE Super Secure Password Recover</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="/static/css/pico.min.css"
+</head>
+<body>
+	<main class="container">
+		<h1>Super Secure Password Recover</h1>
+		<p>Your password is <b>{{ password }}</b></p>
+		<p>Type your <b>PIN code</b> to see your password </p>
+		<form action="/" method="post">
+			<input type="number" name="pin" value='{{ pin }}'>
+			<input type=submit value="Reveal my password">
+		</form>
+
+		<h2>Game advice</h2>
+		<p><small>
+			Your pin code is 123. Can you reveal admin password trough the web user interface?
+		</small></p>
+		<p><small>
+			Vulnerable Super Secure Password Recover. Copyright 2018-2024 Tero Karvinen 
+			<a href="http://TeroKarvinen.com">TeroKarvinen.com</a>. 
+			Normally targets don't give you this sql: <br />
+			{{ sql }}
+		</small></p>
+	</main>
+</body>
+</html>
+

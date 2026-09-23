@@ -1,0 +1,16 @@
+{% extends "hats/base.html" %}
+
+{% block content %}
+
+	<h1>Hello!</h1>
+
+	<p>
+		<a role="button" href="{% url 'my-data' %}">Show my personal data</a>
+	</p>
+
+	<hr> 
+	<p>
+		<a role="button" class="redButton"  href="{% url 'admin-dashboard' %}">Admin dashboard</a>
+	</p>
+
+{% endblock content %}

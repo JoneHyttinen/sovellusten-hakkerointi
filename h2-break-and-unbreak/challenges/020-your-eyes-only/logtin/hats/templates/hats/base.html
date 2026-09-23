@@ -1,0 +1,57 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Tero's Test Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'hats/css/pico.min.css' %}">
+	<style>
+		.container {
+			max-width: 600px;
+		}
+
+		.redButton {
+			background: #d61c1c;;
+		}
+
+		 [data-theme="light"], :root:not([data-theme="dark"]) {
+			--pico-color: black;
+		 }
+
+		nav {
+			background: #efefef;
+			padding: 0 20px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="{% url 'frontpage' %}">Frontpage</a></li>
+		</ul>
+		{% if user.get_username %}
+			<ul>
+				<li><a role="button" class="outline secondary" href="{% url 'logout' %}">Logout {{ user.get_username }}</a></li>
+			</ul>
+		{% else %}
+			<ul>
+				<li><a role="button" class="outline secondary" href="{% url 'login' %}">Login</a></li>
+				<li><a role="button" href="{% url 'register' %}">Register</a></li>
+			</ul>
+		{% endif %}
+		
+	</nav>
+	<main class="container">
+		{% block content %}		
+		<h1>Tero's Test Page</h1>
+		<p>Let's test UTF-8 with "päivää"</p>
+		{% endblock content %}
+	</main>
+	<footer class="container">
+		<small>Copyright 2024 Tero Karvinen <a href="http://TeroKarvinen.com">TeroKarvinen.com</a></small>
+	</footer>
+</body>
+</html>
+

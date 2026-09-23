@@ -1,0 +1,17 @@
+{% extends "hats/base.html" %}
+
+{% block content %}
+
+	<h1>Register a new account</h1>
+
+	<form method=post>
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type=submit value="Register">
+	</form>
+
+	{% if object %}
+	 <p><a href="/task/{{ object.pk }}/delete">Delete</a></p>
+	{% endif %}
+{% endblock content %}
+

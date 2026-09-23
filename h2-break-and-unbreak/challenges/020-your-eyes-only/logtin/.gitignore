@@ -1,0 +1,4 @@
+# Starting with a slash "/" is relative to directory of .gitignore
+# Copyright 2024 Tero Karvinen https://TeroKarvinen.com
+# Only ignore collected static files, not the originals under terosapp/static/terosapp/
+/static/
