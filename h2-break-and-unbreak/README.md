@@ -277,7 +277,7 @@ Selailin kansioita läpi ja löysin **views/** kansiosta Python-tiedoston **view
 
 Koodista huomataan, että alimpaan luokkaan:
 
-```
+```py
 class AdminShowAllView(UserPassesTestMixin, TemplateView):
 	template_name="hats/admin-show-all.html"
 
