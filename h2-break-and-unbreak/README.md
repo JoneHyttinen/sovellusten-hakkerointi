@@ -123,6 +123,14 @@ Sitten latasin yleisiä web-polkuja sisältävän sanalistan.
 
 `wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/common.txt`
 
+Sen jälkeen latasin Teron artikkelin kautta **dirfuzt-1**, suoritettavan tehtävätiedoston ja annoin sille suoritus oikeudet `chmod u+x dirfuzt-1` komennolla, jonka jälkeen sen voi suorittaa.
+
+![kuva13](./kuvia/kuva13.png)
+
+Verkko-osoitteen avaamalla selaimessa aukeaa seuraavanlainen sivu.
+
+
+
 ---
 
 ## Lähteet
