@@ -17,4 +17,4 @@ class AdminShowAllView(UserPassesTestMixin, TemplateView):
 	template_name="hats/admin-show-all.html"
 
 	def test_func(self):
-		return self.request.user.is_authenticated
+		return self.request.user.is_authenticated and self.request.user.is_staff

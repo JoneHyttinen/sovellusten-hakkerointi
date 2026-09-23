@@ -51,6 +51,8 @@ Ensimmäinen haaste on 010-staff-only, jonka kansion sisältö on seuraavanlaine
 
 ---
 
+### Pakettien lataus
+
 Yritin suorittaa kansion sisältä löytyneen Python-tiedoston ohjeiden mukaan, mutta järjestelmälläni ei ollut `python-flask-sqlalchemy` pakettia, joten latasin sen `pacman` packet managerilla, koska olen Arch-pohjaisella järjestelmällä (BTW).
 
 ![kuva4](./kuvia/kuva4.png)
@@ -61,6 +63,8 @@ Suoritin tiedoston uudestaan ja dev serveri meni päälle kuvan alla olevaan oso
 ![kuva5](./kuvia/kuva5.png)
 
 ---
+
+### Hakkerointi alkuun
 
 Seuraavaksi aloitin hakkeroinnin annetussa osoitteessa, joka näytti aluksi tältä:
 
@@ -74,6 +78,10 @@ Painamalla F12, avasin selaimen Inspector näkymän, josta näin sivun html-kood
 
 
 Vaihtamalla html input tyypin `text` muotoon, voimme syöttää salasanan teksti muodossa, joka auttaa meitä SQL-injektiota tehtäessä.
+
+---
+
+### SQL-injektio
 
 Kokeilin perus SQL-injektio arvoa, jonka opin tunnilla `' OR 1=1--`. Tämä näytti salasanan olevan **foo**, joka antaa meille selkeän vihjeen siitä, että sovellus on murrettavissa, mutta meidän pitää näyttää oikealta riviltä salasana.
 
@@ -129,7 +137,177 @@ Sen jälkeen latasin Teron artikkelin kautta **dirfuzt-1**, suoritettavan tehtä
 
 Verkko-osoitteen avaamalla selaimessa aukeaa seuraavanlainen sivu.
 
+![kuva14](./kuvia/kuva14.png)
 
+---
+
+### FFUF käyttö
+
+Ensimmäisenä käytin ffuf ohjelmaa ja seuraavanlaista komentoa `ffuf -w common.txt -u http://127.0.0.2:8000/FUZZ`, joka löytyi myös Teron omasta artikkelista.
+
+Tämä komento tulosti 4752 riviä eri polun antamasta vastauksesta, jota en tietenkään aio kaikkea tähän lisätä kuvalla, mutta tulostuksen loppupää näytti tältä.
+
+![kuva15](./kuvia/kuva15.png)
+
+Siinä näkyy joitain testikohteita, tiedot jotka tulostuivat ovat **Status**, **Size**, **Words**, **Lines**, **Duration**.
+
+Yleisin rivi mikä tulostui oli nimenomaan seuraava:
+
+`[Status: 200, Size: 154, Words: 9, Lines: 10, Duration: 0ms`
+
+---
+
+### Filtteröidään tuloksia
+
+Tunnilla puhuimme siitä, että mitä näistä kannattaisi ensin filtteröidä pois, ja se olisi nimeonmaan **Size** eli koko, koska sen muuttuminen merkitsee yleisesti jotain muutosta sisällössä. Käytin siihen seuraavaa komentoa.
+
+`ffuf -w common.txt -u http://127.0.0.2:8000/FUZZ -fs 154`
+
+Se tulosti seuraavat tiedot:
+
+![kuva16](./kuvia/kuva16.png)
+
+Tässä näkyvät kaikki pyynnöt, joissa oli eri koko kuin 154 tavua (bytes).
+
+---
+
+### Ratkaisun tarkistaminen
+
+Tehtävässä piti löytää kaksi eri URL-päätettä. Admin-sivu ja versionhallinta-sivu. Joten testasin **.git** päätettä, sekä **wp-admin** päätettä.
+
+![wp-admin-test](./kuvia/wp-admin.png)
+![git-test](./kuvia/git-testi.png)
+
+Molemmat sivut ja liput löytyivät näillä endpointeilla, joten tämä tehtävä on nyt ratkaistu.
+
+```
+.git lippu FLAG{tero-git-3cc87212bcd411686a3b9e547d47fc51}
+wp-admin lippu FLAG{tero-wpadmin-3364c855a2ac87341fc7bcbda955b580}
+```
+```
+```
+
+---
+
+## d) Break into 020-your-eyes-only Karvinen 2024.
+
+Tämä haaste on jo ladattu, joten ohjeiden mukaan siirrytään 020-your-eyes-only kansioon ja ladataan **virtualenv** paketti.
+
+![kuva17](./kuvia/kuva17.png)
+
+löysin seuraavat paketit ja `python-pipenv` kuulosti toimivalta, joten latasin sen `sudo pacman -S python-pipenv`.
+
+---
+
+### Avataan virtuaalinen ympäristö
+
+Sitten suoritin komennot `virtualenv virtualenv/ -p python3 --system-site-packages` ja `source virtualenv/bin/activate`.
+
+Tästä kuitenkin seurasi source... komennon kanssa virhe, koska käytin **fish** shelliä enkä bashia (oletan, että sitä haettiin).
+
+![error-koska-fish](./kuvia/error-koska-fish.png)
+
+Löysin onnekseni **activate.fish** version skriptistä, joten käytin sitä.
+
+![toimii](./kuvia/virtualenv-toimii.png)
+
+Huomaan, että virtual environment toimii, testataan vielä Teron ohjeiden mukaan, että kaikki on ok.
+
+![kaikki-ok](./kuvia/kaikki-ok.png)
+
+Kaikki näyttää toimivan ja django on nyt ladattu pip-työkalun avulla.
+
+Seuraavaksi navigoidaan logtin/ kansioon.
+
+![logtin](./kuvia/logtin.png)
+
+---
+
+### Päivitetään tietokanta ja ajetaan testipalvelin
+
+Päivitetään tietokanta `./manage.py makemigrations; ./manage.py migrate` komennolla.
+
+![tietokanta](./kuvia/tietokanta-paivitys.png)
+
+Seuraavaksi ajetaan testipalvelin.
+
+![servu](./kuvia/servu-ajo.png)
+
+---
+
+### Aletaan hakkeroimaan!
+
+Palvelimen osoitteesta löytyy seuraavanlainen sivu.
+
+![sivu-020](./kuvia/sivusto-020.png)
+
+Tein sivustolle käyttäjän, ja kävin katsomassa "Show my personal data" välilehden.
+
+![jonni](./kuvia/jonni-data.png)
+
+Tältä sivulta löytyi vain jotain placeholder tietoa.
+
+Tämän jälkeen menin takaisin etusivulle ja testasin "Admin dashboard nappia".
+
+Se vei minut **admin-dashboard/** -päätteeseen, jossa luki **403 Forbidden**.
+
+Seuraavaksi aloin käyttämään taas **ffuf** -työkalua löytääkseni oikean admin consolen.
+
+---
+
+### FFUF käyttöön!
+
+Minulla oli ideana, että haluaisin etsiä kaikki päätteet, jotka sisältää **admin** sanan (ja ovat common.txt sanalistassa) ja kysyin Claude (Sonnet 5) tekoälyltä, että miten voisin ffufilla tehdä tämän ja se antoi minulle seuraavan komennon.
+
+`ffuf -w common.txt:FUZZ -u https://target.com/FUZZ -mr "admin"`
+
+Tämä ei kuitenkaan tehnyt läheskään sitä mitä yritin selittää, joten filtteröin pois HTTP Statuksen **404**, joka palautti yhden päätepisteen **admin-console/**. Testasin mihin se vie.
+
+![admin-console](./kuvia/admin-console.png)
+
+Admin Console löytyi, tehtävä on ratkaistu!
+
+---
+
+## e) Fix the 020-your-eyes-only vulnerability
+
+Selailin kansioita läpi ja löysin **views/** kansiosta Python-tiedoston **views.py**, jossa oli seuraavat luokat, joilla tarkistettiin käyttäjän autentikaatio ja kuuluvatko he henkilöstöön.
+
+![views](./kuvia/views.png)
+
+Koodista huomataan, että alimpaan luokkaan:
+
+```
+class AdminShowAllView(UserPassesTestMixin, TemplateView):
+	template_name="hats/admin-show-all.html"
+
+	def test_func(self):
+		return self.request.user.is_authenticated
+```
+```
+```
+
+on unohdettu laittaa pyyntö tarkistaa, onko käyttäjä osa henkilöstöä.
+
+Joten lisäsin loppuun `and self.request.user.is_staff`.
+
+![korjattu-views](./kuvia/korjattu-views.png)
+
+Korjauksen jälkeen ajoin palvelimen uudestaan ja testasin molemmat admin päätteet.
+
+![admin-console-forbidden](./kuvia/ei-nay-admin.png)
+
+![admin-dashboard-forbidden](./kuvia/ei-nay-dashboard.png)
+
+---
+
+### Ratkaistu!
+
+Nyt molemmat **admin-dashboard**, sekä **admin-console** päätteet tarkistaa, että käyttäjä on admin eikä päästä peruskäyttäjää sisään.
+
+---
+
+En tehnyt g) tai h) kohtaa ainakaan tässä vaiheessa kun oli kiire.
 
 ---
 
