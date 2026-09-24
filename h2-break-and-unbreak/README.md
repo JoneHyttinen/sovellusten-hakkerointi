@@ -23,7 +23,7 @@
 - Tässä Teron artikkelissa Tero selittää minkälainen raportin kuuluu olla, kun jotain testataan tietokoneella, kuten tämän kurssin harjoitustehtävien raportit.
 - Raportin tulee olla toistettava, lukijan täytyy pystyä toistamaan testit samoilla lopputuloksilla, kuin raportin tekijällä
 - Täsmällinen, pitää olla selkeää mitä työkaluja on käytetty, missä järjestyksessä ja onko testeissä tai työkaluissa ollut ongelmia
-- Helppolukuinen, käytä väliotsikoita, kirjoita selkeää ja huolellista kieltä. 
+- Helppolukuinen, käytä väliotsikoita, kirjoita selkeää ja huolellista kieltä.
 - Raportissa täytyy viitata lähteisiin, koska hyvä tapa ja akateeminen käytäntö vaatii viittauksia.
 - Artikkelissa on myös paljon esimerkkejä raporteista ja yleisiä mokia raportin kirjoittamisessa.
 
@@ -44,7 +44,6 @@ Zip-tiedosto sisälsi challenges tiedoston, jonka sisällä on seuraavat kaksi h
 
 ![kuva2](./kuvia/kuva2.png)
 
-
 Ensimmäinen haaste on 010-staff-only, jonka kansion sisältö on seuraavanlainen:
 
 ![kuva3](./kuvia/kuva3.png)
@@ -56,7 +55,6 @@ Ensimmäinen haaste on 010-staff-only, jonka kansion sisältö on seuraavanlaine
 Yritin suorittaa kansion sisältä löytyneen Python-tiedoston ohjeiden mukaan, mutta järjestelmälläni ei ollut `python-flask-sqlalchemy` pakettia, joten latasin sen `pacman` packet managerilla, koska olen Arch-pohjaisella järjestelmällä (BTW).
 
 ![kuva4](./kuvia/kuva4.png)
-
 
 Suoritin tiedoston uudestaan ja dev serveri meni päälle kuvan alla olevaan osoitteeseen.
 
@@ -76,7 +74,6 @@ Painamalla F12, avasin selaimen Inspector näkymän, josta näin sivun html-kood
 
 ![kuva7](./kuvia/kuva7.png)
 
-
 Vaihtamalla html input tyypin `text` muotoon, voimme syöttää salasanan teksti muodossa, joka auttaa meitä SQL-injektiota tehtäessä.
 
 ---
@@ -86,7 +83,6 @@ Vaihtamalla html input tyypin `text` muotoon, voimme syöttää salasanan teksti
 Kokeilin perus SQL-injektio arvoa, jonka opin tunnilla `' OR 1=1--`. Tämä näytti salasanan olevan **foo**, joka antaa meille selkeän vihjeen siitä, että sovellus on murrettavissa, mutta meidän pitää näyttää oikealta riviltä salasana.
 
 ![kuva8](./kuvia/kuva8.png)
-
 
 Tutkin hieman erilaisia SQL komentoja(?) ja löysin **LIMIT** komennon, jolla voidaan rajata kuinka monta riviä kyselymme saa näyttää, tämä ei kuitenkaan meitä auta tässä tehtävässä.
 
@@ -184,7 +180,9 @@ Molemmat sivut ja liput löytyivät näillä endpointeilla, joten tämä tehtäv
 .git lippu FLAG{tero-git-3cc87212bcd411686a3b9e547d47fc51}
 wp-admin lippu FLAG{tero-wpadmin-3364c855a2ac87341fc7bcbda955b580}
 ```
+
 ```
+
 ```
 
 ---
@@ -284,7 +282,9 @@ class AdminShowAllView(UserPassesTestMixin, TemplateView):
 	def test_func(self):
 		return self.request.user.is_authenticated
 ```
+
 ```
+
 ```
 
 on unohdettu laittaa pyyntö tarkistaa, onko käyttäjä osa henkilöstöä.
@@ -320,3 +320,5 @@ En tehnyt g) tai h) kohtaa ainakaan tässä vaiheessa kun oli kiire.
 [PortSwigger]("https://portswigger.net/web-security/access-control")
 
 [Karvinen 2006]("https://terokarvinen.com/2006/raportin-kirjoittaminen-4/")
+
+[SQL LIMIT]("https://www.geeksforgeeks.org/sql/sql-limit-clause/")
