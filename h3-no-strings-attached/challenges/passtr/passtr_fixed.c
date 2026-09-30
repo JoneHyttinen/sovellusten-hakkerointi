@@ -12,6 +12,13 @@ int main() {
   scanf("%19s", guess);
 
   int match = 1;
+
+  if (strlen(guess) != sizeof(stored)) {
+    match = 0;
+    printf("Sorry, no bonus.\n");
+    return 0;
+  }
+
   for (size_t i = 0; i < sizeof(stored); i++) {
     if (((unsigned char)guess[i] ^ key[i % sizeof(key)]) != stored[i]) {
       match = 0;
