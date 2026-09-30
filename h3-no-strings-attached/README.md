@@ -47,7 +47,7 @@ C-kielessä operaattori on ^.
 
 ### XOR-apuohjelma
 
-Kirjoitin ihan ensimmäisenä apuohjelman, jonka avulla sain obfuskoitua haluamani salasanan "hakkeri_ukko_543", sekä haluamani avaimen "obfus" muutettua hexadecimal -muotoon.
+Kirjoitin ihan ensimmäisenä apuohjelman, jonka avulla sain obfuskoitua haluamani salasanan "hakkeri_ukko_543", haluamani avainta "obfus" vastaan jonka lopullisen tuloksen ohjelma tulostaa hexadecimal -muodossa.
 
 Sen koodi näyttää tältä:
 
