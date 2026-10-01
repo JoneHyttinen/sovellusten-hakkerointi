@@ -173,6 +173,12 @@ Kokeilin salasanaa ohjelmaan:
 
 ---
 
+## d) Cryptopals
+
+Palaan tähän tehtävään todennäköisesti myöhemmin, jos on aikaa.
+
+---
+
 ### Yhteenveto
 
 | Vaihe | Komento | Havainto |
