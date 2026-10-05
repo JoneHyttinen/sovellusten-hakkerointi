@@ -58,7 +58,7 @@ Tämän ohjeen vastakohta on `JZ` (Jump if Zero), joten käytin sitä `JNZ` sija
 
 ![muutettu-binaari](./kuvia/muutettu-binaari.png)
 
-Eli periaatteessa hypoteesini oli oikein, mutta koodin muutos piti tehdä eri tavalla kuin ajattelin aluksi mahdolliseksi Ghidralla.
+Eli periaatteessa hypoteesini oli lähes oikein, mutta koodin muutos piti tehdä eri tavalla kuin ajattelin aluksi mahdolliseksi Ghidralla ja muutos oli hieman erilainen.
 
 ---
 
