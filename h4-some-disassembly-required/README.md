@@ -52,6 +52,8 @@ Tämän saa tehtyä yhtä arvoa muuttamalla, jos muutamme if -lausekkeen `(match
 
 Tai tämä oli ainakin ensimmäinen hypoteesini, ennen kuin tajusin, että en voi vaan muuttaa koodia decompiler näkymässä, vaan minun pitää muuttaa itse Assembly -koodia.
 
+Ghidrassa Assembly koodia muutetaan listing näkymässä halutun viivan kohdalta klikkaamalla oikealla hiiren napilla ja valitsemalla `Patch instruction` valikosta, jonka jälkeen pääset muokkaamaan ohjeita.
+
 Katsoin Assembly -kielen ohjeita ja näin `JNZ` (Jump if Not Zero) ohjeen ohjelman binäärissä, joka siirtyy tiettyyn muistiosoitteessen jos Zero Flag (ZF) on 0 ja ohjelma ei siirry, jos se on 1.
 
 Tämän ohjeen vastakohta on `JZ` (Jump if Zero), joten käytin sitä `JNZ` sijasta.
