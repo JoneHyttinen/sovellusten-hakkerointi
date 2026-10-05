@@ -1,0 +1,3 @@
+[submodule "h4-some-disassembly-required/crackmes"]
+	path = h4-some-disassembly-required/crackmes
+	url = https://github.com/NoraCodes/crackmes.git
