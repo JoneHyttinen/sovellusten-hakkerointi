@@ -13,6 +13,8 @@ github: [metadata]
 # File.realpath on every file it scans, which raises Errno::ENOENT on a
 # broken symlink and aborts the whole build, so keep it out of the crawl.
 exclude:
+  - h4-some-disassembly-required/crackmes
+  - h4-some-disassembly-required/Crackmes-ghidra
   - h6-onkohan-tama-turvallinen-kayttaa/dump-rootfs
   - h6-onkohan-tama-turvallinen-kayttaa/extractions
   - h6-onkohan-tama-turvallinen-kayttaa/tp-link-decrypt
